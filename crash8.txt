@@ -1,0 +1,918 @@
+﻿--------- beginning of main
+04-13 17:06:05.040  9675  9786 E bt_stack: [ERROR:com_android_bluetooth_btservice_ActivityAttribution.cpp(172)] Failed to get ActivityAttribution Interface
+--------- beginning of system
+04-13 17:06:05.086   618 14612 E keystore2: keystore2::error: In create_operation.
+04-13 17:06:05.086   618 14612 E keystore2: 
+04-13 17:06:05.086   618 14612 E keystore2: Caused by:
+04-13 17:06:05.086   618 14612 E keystore2:     0: In authorize_create: matching auth token is expired.
+04-13 17:06:05.086   618 14612 E keystore2:     1: Error::Km(ErrorCode(-26))
+04-13 17:06:05.193 15648 21566 E FileUtils: err open mi_exception_log errno=2
+04-13 17:06:05.193 15648 21566 E FileUtils: err write to mi_exception_log
+04-13 17:06:05.284 13477 13488 E NotesProvider: callingPackageName is com.miui.securitycenter
+04-13 17:06:05.330 13477 13477 E FileUtils: err open mi_exception_log errno=2
+04-13 17:06:05.330 13477 13477 E FileUtils: err write to mi_exception_log
+04-13 17:06:05.332  1556  1556 E FileUtils: err write to mi_exception_log
+04-13 17:06:05.345 19154 27407 E ActivityManagerWrapper: get all recent tasks force including 27129
+04-13 17:06:05.347  1556  1749 E MiuiActivityController: MiuiLog-ActivityObserver: There was something wrong : null
+04-13 17:06:05.387 13477 13499 E ActivityThread: Failed to find provider info for com.miui.personalassistant.widget.external
+04-13 17:06:05.397 19154 27407 E ActivityManagerWrapper: getRecentTasks: size=34
+04-13 17:06:05.397 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27438   userId=0   baseIntent=Intent { act=null flag=268435456 cmp=ComponentInfo{com.example.timedrop/com.example.timedrop.MainActivity} }
+04-13 17:06:05.397 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27433   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.google.android.dialer/com.google.android.dialer.extensions.GoogleDialtactsActivity} }
+04-13 17:06:05.397 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27366   userId=0   baseIntent=Intent { act=null flag=268533760 cmp=ComponentInfo{com.instagram.android/com.instagram.mainactivity.InstagramMainActivity} }
+04-13 17:06:05.397 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27430   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.blockchainvault/com.pinetwork.MainActivity} }
+04-13 17:06:05.397 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27226   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.facebook.orca/com.facebook.orca.auth.StartScreenActivity} }
+04-13 17:06:05.397 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27206   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.zhiliaoapp.musically/com.ss.android.ugc.aweme.splash.SplashActivity} }
+04-13 17:06:05.397 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27355   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.facebook.katana/com.facebook.katana.LoginActivity} }
+04-13 17:06:05.397 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27269   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.whatsapp/com.whatsapp.Main} }
+04-13 17:06:05.397 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27357   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.microsoft.teams/com.microsoft.skype.teams.Launcher} }
+04-13 17:06:05.398 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27384   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.wssc.simpleclock/com.wssc.simpleclock.ui.activity.MainActivity} }
+04-13 17:06:05.398 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27304   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.spotify.music/com.spotify.music.MainActivity} }
+04-13 17:06:05.398 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27387   userId=0   baseIntent=Intent { act=android.settings.SETTINGS flag=335544320 cmp=ComponentInfo{com.android.settings/com.android.settings.MiuiSettings} }
+04-13 17:06:05.398 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27396   userId=0   baseIntent=Intent { act=null flag=335544320 cmp=ComponentInfo{com.fin.plan/com.fin.plan.presentation.MainActivity} }
+04-13 17:06:05.398 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27392   userId=0   baseIntent=Intent { act=null flag=335544320 cmp=ComponentInfo{com.android.updater/com.android.updater.MainActivity} }
+04-13 17:06:05.398 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27389   userId=0   baseIntent=Intent { act=com.google.android.finsky.phoenix.ACQUIRE flag=268435456 cmp=ComponentInfo{com.android.vending/com.google.android.finsky.billing.acquire.SheetUiBuilderHostActivity} }
+04-13 17:06:05.398 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27383   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.anthropic.claude/com.anthropic.claude.mainactivity.MainActivity} }
+04-13 17:06:05.398 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27375   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{app.gainaura.habits/app.gainaura.habits.MainActivity} }
+04-13 17:06:05.398 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27378   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.microsoft.office.outlook/com.microsoft.office.outlook.MainActivity} }
+04-13 17:06:05.398 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27368   userId=0   baseIntent=Intent { act=android.intent.action.VIEW flag=268435456 cmp=ComponentInfo{com.linkedin.android/com.linkedin.android.urls.DeeplinkActivity} }
+04-13 17:06:05.398 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27367   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.google.android.apps.maps/com.google.android.maps.MapsActivity} }
+04-13 17:06:05.398 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27104   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.openai.chatgpt/com.openai.chatgpt.MainActivity} }
+04-13 17:06:05.398 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27361   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.mercadopago.wallet/com.mercadopago.wallet.SplashActivityAliasDefault} }
+04-13 17:06:05.398 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27351   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.reddit.frontpage/launcher.default} }
+04-13 17:06:05.398 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27353   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{org.telegram.messenger/org.telegram.messenger.DefaultIcon} }
+04-13 17:06:05.399 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27346   userId=0   baseIntent=Intent { act=null flag=335609856 cmp=ComponentInfo{com.amazon.mShop.android.shopping/com.amazon.mShop.httpUrlDeepLink.PublicUrlActivity} }
+04-13 17:06:05.399 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27334   userId=0   baseIntent=Intent { act=android.intent.action.VIEW flag=318767107 cmp=ComponentInfo{mega.privacy.android.app/mega.privacy.android.app.presentation.pdfviewer.PdfViewerActivity} }
+04-13 17:06:05.399 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27328   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.suifitime.suifileexplorer.root.pro/com.suifitime.suifileexplorer.root.DocumentsActivity} }
+04-13 17:06:05.399 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27325   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.google.android.apps.translate/com.google.android.apps.translate.TranslateActivity} }
+04-13 17:06:05.399 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27268   userId=0   baseIntent=Intent { act=null flag=805306368 cmp=ComponentInfo{com.vizta.wefly/com.moba.unityplugin.MobaGameUnityActivity} }
+04-13 17:06:05.399 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27322   userId=0   baseIntent=Intent { act=null flag=872415232 cmp=ComponentInfo{com.supercell.clashofclans/com.supercell.titan.GameApp} }
+04-13 17:06:05.399 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27241   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.tippingcanoe.promodescuentos/com.pepper.apps.android.presentation.MainActivityDarkIcon} }
+04-13 17:06:05.399 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27320   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.android.camera/com.android.camera.Camera} }
+04-13 17:06:05.399 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27318   userId=0   baseIntent=Intent { act=null flag=268435456 cmp=ComponentInfo{com.miui.android.fashiongallery/com.miui.cw.feature.ui.home.HomeActivity} }
+04-13 17:06:05.399 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27230   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=268435456 cmp=ComponentInfo{com.duolingo/com.duolingo.splash.LaunchActivity} }
+04-13 17:06:05.481  6257  6618 E ThermalInfoUtils: getCurrentCapacity Exceptionjava.io.FileNotFoundException: /sys/class/power_supply/battery/charge_counter: open failed: EACCES (Permission denied)
+04-13 17:06:05.483  1556  1810 E ProcessManager: error write exception log
+04-13 17:06:05.496 19154 27407 E FileUtils: err open mi_exception_log errno=2
+04-13 17:06:05.496 19154 27407 E FileUtils: err write to mi_exception_log
+04-13 17:06:05.506 19154 27407 E ActivityManagerWrapper: get all recent tasks force including 27438
+04-13 17:06:05.515  6257  6618 E ThermalInfoUtils: getCurrentCapacity Exceptionjava.io.FileNotFoundException: /sys/class/power_supply/battery/charge_counter: open failed: EACCES (Permission denied)
+04-13 17:06:05.529 19154 27407 E ActivityManagerWrapper: getRecentTasks: size=34
+04-13 17:06:05.529 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27438   userId=0   baseIntent=Intent { act=null flag=268435456 cmp=ComponentInfo{com.example.timedrop/com.example.timedrop.MainActivity} }
+04-13 17:06:05.529 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27433   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.google.android.dialer/com.google.android.dialer.extensions.GoogleDialtactsActivity} }
+04-13 17:06:05.529 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27366   userId=0   baseIntent=Intent { act=null flag=268533760 cmp=ComponentInfo{com.instagram.android/com.instagram.mainactivity.InstagramMainActivity} }
+04-13 17:06:05.529 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27430   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.blockchainvault/com.pinetwork.MainActivity} }
+04-13 17:06:05.529 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27226   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.facebook.orca/com.facebook.orca.auth.StartScreenActivity} }
+04-13 17:06:05.529 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27206   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.zhiliaoapp.musically/com.ss.android.ugc.aweme.splash.SplashActivity} }
+04-13 17:06:05.529 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27355   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.facebook.katana/com.facebook.katana.LoginActivity} }
+04-13 17:06:05.529 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27269   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.whatsapp/com.whatsapp.Main} }
+04-13 17:06:05.529 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27357   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.microsoft.teams/com.microsoft.skype.teams.Launcher} }
+04-13 17:06:05.529 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27384   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.wssc.simpleclock/com.wssc.simpleclock.ui.activity.MainActivity} }
+04-13 17:06:05.529 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27304   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.spotify.music/com.spotify.music.MainActivity} }
+04-13 17:06:05.529 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27387   userId=0   baseIntent=Intent { act=android.settings.SETTINGS flag=335544320 cmp=ComponentInfo{com.android.settings/com.android.settings.MiuiSettings} }
+04-13 17:06:05.529 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27396   userId=0   baseIntent=Intent { act=null flag=335544320 cmp=ComponentInfo{com.fin.plan/com.fin.plan.presentation.MainActivity} }
+04-13 17:06:05.529 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27392   userId=0   baseIntent=Intent { act=null flag=335544320 cmp=ComponentInfo{com.android.updater/com.android.updater.MainActivity} }
+04-13 17:06:05.529 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27389   userId=0   baseIntent=Intent { act=com.google.android.finsky.phoenix.ACQUIRE flag=268435456 cmp=ComponentInfo{com.android.vending/com.google.android.finsky.billing.acquire.SheetUiBuilderHostActivity} }
+04-13 17:06:05.529 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27383   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.anthropic.claude/com.anthropic.claude.mainactivity.MainActivity} }
+04-13 17:06:05.529 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27375   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{app.gainaura.habits/app.gainaura.habits.MainActivity} }
+04-13 17:06:05.529 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27378   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.microsoft.office.outlook/com.microsoft.office.outlook.MainActivity} }
+04-13 17:06:05.529 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27368   userId=0   baseIntent=Intent { act=android.intent.action.VIEW flag=268435456 cmp=ComponentInfo{com.linkedin.android/com.linkedin.android.urls.DeeplinkActivity} }
+04-13 17:06:05.529 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27367   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.google.android.apps.maps/com.google.android.maps.MapsActivity} }
+04-13 17:06:05.529 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27104   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.openai.chatgpt/com.openai.chatgpt.MainActivity} }
+04-13 17:06:05.529 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27361   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.mercadopago.wallet/com.mercadopago.wallet.SplashActivityAliasDefault} }
+04-13 17:06:05.529 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27351   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.reddit.frontpage/launcher.default} }
+04-13 17:06:05.529 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27353   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{org.telegram.messenger/org.telegram.messenger.DefaultIcon} }
+04-13 17:06:05.529 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27346   userId=0   baseIntent=Intent { act=null flag=335609856 cmp=ComponentInfo{com.amazon.mShop.android.shopping/com.amazon.mShop.httpUrlDeepLink.PublicUrlActivity} }
+04-13 17:06:05.529 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27334   userId=0   baseIntent=Intent { act=android.intent.action.VIEW flag=318767107 cmp=ComponentInfo{mega.privacy.android.app/mega.privacy.android.app.presentation.pdfviewer.PdfViewerActivity} }
+04-13 17:06:05.529 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27328   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.suifitime.suifileexplorer.root.pro/com.suifitime.suifileexplorer.root.DocumentsActivity} }
+04-13 17:06:05.529 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27325   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.google.android.apps.translate/com.google.android.apps.translate.TranslateActivity} }
+04-13 17:06:05.529 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27268   userId=0   baseIntent=Intent { act=null flag=805306368 cmp=ComponentInfo{com.vizta.wefly/com.moba.unityplugin.MobaGameUnityActivity} }
+04-13 17:06:05.529 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27322   userId=0   baseIntent=Intent { act=null flag=872415232 cmp=ComponentInfo{com.supercell.clashofclans/com.supercell.titan.GameApp} }
+04-13 17:06:05.529 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27241   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.tippingcanoe.promodescuentos/com.pepper.apps.android.presentation.MainActivityDarkIcon} }
+04-13 17:06:05.529 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27320   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.android.camera/com.android.camera.Camera} }
+04-13 17:06:05.530 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27318   userId=0   baseIntent=Intent { act=null flag=268435456 cmp=ComponentInfo{com.miui.android.fashiongallery/com.miui.cw.feature.ui.home.HomeActivity} }
+04-13 17:06:05.530 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27230   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=268435456 cmp=ComponentInfo{com.duolingo/com.duolingo.splash.LaunchActivity} }
+04-13 17:06:05.531  1556  1621 E FileUtils: err open mi_exception_log errno=2
+04-13 17:06:05.531  1556  1621 E FileUtils: err write to mi_exception_log
+04-13 17:06:05.575  1556  1815 E RTMode  : Error: package name null
+04-13 17:06:05.592 19154 27407 E FileUtils: err open mi_exception_log errno=2
+04-13 17:06:05.592 19154 27407 E FileUtils: err write to mi_exception_log
+04-13 17:06:05.594  1556  1810 E ProcessManager: error write exception log
+04-13 17:06:05.595  1556  1606 E FileUtils: err open mi_exception_log errno=2
+04-13 17:06:05.595  1556  1606 E FileUtils: err write to mi_exception_log
+04-13 17:06:05.608  1556  1815 E RTMode  : Error: package name null
+04-13 17:06:05.631  6257  6970 E FileUtils: err open mi_exception_log errno=2
+04-13 17:06:05.631  6257  6970 E FileUtils: err write to mi_exception_log
+04-13 17:06:05.664  2166  2166 E FileUtils: err write to mi_exception_log
+04-13 17:06:05.665  2166  2166 E adTracker: Value DpRnsGEAm4prcGbDSi8onTs+9BxNxU6MsTH5MDznr1s of type java.lang.String cannot be converted to JSONObject
+04-13 17:06:05.665  2166  2166 E adTracker: Value ADVANCED_CRYPTO_ONE_TO_ONE of type java.lang.String cannot be converted to JSONObject
+04-13 17:06:05.665  2166  2166 E adTracker: Value FCM-Notification of type java.lang.String cannot be converted to JSONObject
+04-13 17:06:05.665  2166  2166 E adTracker: Value vSkBTTXm73hIgazXMKgmEGYI0n0Vj8OX+Wq7DmvsBDg of type java.lang.String cannot be converted to JSONObject
+04-13 17:06:05.665  2166  2166 E adTracker: Value campaign_collapse_key_1171179184800101073 of type java.lang.String cannot be converted to JSONObject
+04-13 17:06:05.665  2166  2166 E adTracker: Value AQADAACAAQAAADVsY2FydmFqYWxtMDAxQGFsdW1uby51YWVtZXgubXhfQWN0aXZlU3luY0V4Y2hhbmdlX0h4Uw of type java.lang.String cannot be converted to JSONObject
+04-13 17:06:05.665  2166  2166 E adTracker: Value 1673031299 of type java.lang.Integer cannot be converted to JSONObject
+04-13 17:06:05.665  2166  2166 E adTracker: Value FCM-Notification of type java.lang.String cannot be converted to JSONObject
+04-13 17:06:05.666  2166  2166 E adTracker: Value FCM-Notification of type java.lang.String cannot be converted to JSONObject
+04-13 17:06:05.666  2166  2166 E adTracker: Value FCM-Notification of type java.lang.String cannot be converted to JSONObject
+04-13 17:06:05.666  2166  2166 E adTracker: Value FCM-Notification of type java.lang.String cannot be converted to JSONObject
+04-13 17:06:05.666  2166  2166 E adTracker: Value campaign_collapse_key_2048281398543705359 of type java.lang.String cannot be converted to JSONObject
+04-13 17:06:05.666  2166  2166 E adTracker: Value 1673031299 of type java.lang.Integer cannot be converted to JSONObject
+04-13 17:06:05.758 23145 23145 E DynamicRefreshRate recy: dynamic is not enable
+04-13 17:06:05.766  1556  1749 E MiuiActivityController: MiuiLog-ActivityObserver: There was something wrong : null
+04-13 17:06:05.804  1556  1749 E MiuiActivityController: MiuiLog-ActivityObserver: There was something wrong : null
+04-13 17:06:05.832 23145 23145 E DynamicRefreshRate recy: dynamic is not enable
+04-13 17:06:05.895 13502 13502 E FileUtils: err open mi_exception_log errno=2
+04-13 17:06:05.895 13502 13502 E FileUtils: err write to mi_exception_log
+04-13 17:06:05.911 23145 23145 E FileUtils: err write to mi_exception_log
+04-13 17:06:06.128 23145 23145 E FileUtils: err write to mi_exception_log
+04-13 17:06:06.194  9675  9826 E bt_stack: [ERROR:com_android_bluetooth_btservice_ActivityAttribution.cpp(172)] Failed to get ActivityAttribution Interface
+04-13 17:06:06.278 28797 28797 E FileUtils: err write to mi_exception_log
+04-13 17:06:06.357 11557 13545 E fb4a.BitmapMemoryCacheTrimStrategy: unknown trim type: OnSystemModerateMemory
+04-13 17:06:06.357 11557 13545 E fb4a.NativeMemoryCacheTrimStrategy: unknown trim type: OnSystemModerateMemory
+04-13 17:06:06.501  1556  1818 E FileUtils: err open mi_exception_log errno=2
+04-13 17:06:06.501  1556  1818 E FileUtils: err write to mi_exception_log
+04-13 17:06:06.531  2166  2166 E adTracker: Value MESSAGE_CREATE1350210986476437514 of type java.lang.String cannot be converted to JSONObject
+04-13 17:06:06.531  2166  2166 E adTracker: Value ranker_group of type java.lang.String cannot be converted to JSONObject
+04-13 17:06:06.531  2166  2166 E adTracker: Value MESSAGE_CREATE1218246991461748787 of type java.lang.String cannot be converted to JSONObject
+04-13 17:06:06.531  2166  2166 E adTracker: Value ranker_group of type java.lang.String cannot be converted to JSONObject
+04-13 17:06:06.531  2166  2166 E adTracker: Value direct|2060524239 of type java.lang.String cannot be converted to JSONObject
+04-13 17:06:06.531  2166  2166 E adTracker: Value com.google.android.apps.messaging of type java.lang.String cannot be converted to JSONObject
+04-13 17:06:06.532  2166  2166 E adTracker: Value MESSAGE_CREATE1119906925350490232 of type java.lang.String cannot be converted to JSONObject
+04-13 17:06:06.784 13502 13502 E FileUtils: err write to mi_exception_log
+04-13 17:06:06.795 13502 13557 E QT      : [QT]file does not exist
+04-13 17:06:06.936 13502 13502 E FileUtils: err write to mi_exception_log
+04-13 17:06:06.936 13502 13502 E FileUtils: err write to mi_exception_log
+04-13 17:06:06.937 13502 13502 E FileUtils: err write to mi_exception_log
+04-13 17:06:07.375 19154 19154 E RotationHelper: setCurrentTransitionRequest: request=2
+04-13 17:06:07.375 19154 19154 E RotationHelper: notifyChange activityFlags=1, mMultiWindowRotationRequest=3, mCurrentTransitionRequest=2, mCurrentStateRequest=0
+04-13 17:06:07.381 19154 19154 E BlurUtils: fastBlur ratio=0.0   withAnim=false   sBlurRatioValue=0.0
+04-13 17:06:07.381 19154 19182 E StateBroadcastUtils: sendFsStateBroadCast state=taskSnapshot   channel=gesture   packageName=
+04-13 17:06:07.382 19154 19154 E Launcher: changeViewByFsGestureState,  view=ShortcutMenuLayer,  alpha=0.0,  scale=0.93
+04-13 17:06:07.425 19154 19154 E FileUtils: err write to mi_exception_log
+04-13 17:06:07.457  2166  2166 E FileUtils: err write to mi_exception_log
+04-13 17:06:07.458 19154 24562 E ClipAnimationHelper: updateSourceStack  mSourceInsets=Rect(0, 93 - 0, 44), mSourceStackBounds=Rect(0, 0 - 1080, 2400)
+04-13 17:06:07.458 19154 24562 E ClipAnimationHelper: updateHomeStack  mSourceInsets=Rect(0, 93 - 0, 44), mHomeStackBounds=Rect(0, 0 - 1080, 2400)
+04-13 17:06:07.458 19154 24562 E ClipAnimationHelper: updateTargetRect  mSourceRect=RectF(0.0, 93.0, 1080.0, 1890.4287)   mTargetRect=RectF(679.0, 0.0, 1239.0, 932.0)   mSourceWindowClipInsets=RectF(0.0, 93.0, 0.0, 509.5713)   mHomeStackBounds=Rect(0, 0 - 1080, 2400)   targetRect=Rect(679, 0 - 1239, 932)
+04-13 17:06:07.461 19154 19182 E StateBroadcastUtils: sendFsStateBroadCast state=crossSafeArea   channel=gesture   packageName=
+04-13 17:06:07.499 19154 19154 E Launcher: changeViewByFsGestureState,  view=ShortcutMenuLayer,  alpha=1.0,  scale=1.0
+04-13 17:06:07.500 19154 19154 E RotationHelper: setCurrentTransitionRequest: request=0
+04-13 17:06:07.500 19154 19154 E RotationHelper: notifyChange activityFlags=1, mMultiWindowRotationRequest=3, mCurrentTransitionRequest=0, mCurrentStateRequest=0
+04-13 17:06:07.506  2166  2166 E FileUtils: err write to mi_exception_log
+04-13 17:06:07.507  2166  2166 E FileUtils: err write to mi_exception_log
+04-13 17:06:07.537 25361 25409 E FileUtils: err open mi_exception_log errno=2
+04-13 17:06:07.537 25361 25409 E FileUtils: err write to mi_exception_log
+04-13 17:06:07.565  1556  1581 E FileUtils: err open mi_exception_log errno=2
+04-13 17:06:07.565  1556  1581 E FileUtils: err write to mi_exception_log
+04-13 17:06:07.566 19154 19154 E FileUtils: err write to mi_exception_log
+04-13 17:06:07.570 25361 25361 E FileUtils: err write to mi_exception_log
+04-13 17:06:07.604  1556  1749 E MiuiActivityController: MiuiLog-ActivityObserver: There was something wrong : null
+04-13 17:06:07.616 11879 11995 E FileUtils: err open mi_exception_log errno=2
+04-13 17:06:07.616 11879 11995 E FileUtils: err write to mi_exception_log
+--------- beginning of crash
+04-13 17:06:07.956 13502 13502 E AndroidRuntime: FATAL EXCEPTION: main
+04-13 17:06:07.956 13502 13502 E AndroidRuntime: Process: com.example.timedrop, PID: 13502
+04-13 17:06:07.956 13502 13502 E AndroidRuntime: java.lang.IllegalStateException: Asking for intrinsic measurements of SubcomposeLayout layouts is not supported. This includes components that are built on top of SubcomposeLayout, such as lazy lists, BoxWithConstraints, TabRow, etc. To mitigate this:
+04-13 17:06:07.956 13502 13502 E AndroidRuntime: - if intrinsic measurements are used to achieve 'match parent' sizing, consider replacing the parent of the component with a custom layout which controls the order in which children are measured, making intrinsic measurement not needed
+04-13 17:06:07.956 13502 13502 E AndroidRuntime: - adding a size modifier to the component, in order to fast return the queried intrinsic measurement.
+04-13 17:06:07.956 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.LayoutNode$NoIntrinsicsMeasurePolicy.maxIntrinsicHeight(LayoutNode.kt:716)
+04-13 17:06:07.956 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.LayoutNode$NoIntrinsicsMeasurePolicy.maxIntrinsicHeight(LayoutNode.kt:697)
+04-13 17:06:07.956 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.IntrinsicsPolicy.maxIntrinsicHeight(IntrinsicsPolicy.kt:53)
+04-13 17:06:07.956 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.LayoutNode.maxIntrinsicHeight(LayoutNode.kt:759)
+04-13 17:06:07.956 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.InnerNodeCoordinator.maxIntrinsicHeight(InnerNodeCoordinator.kt:140)
+04-13 17:06:07.956 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.NodeMeasuringIntrinsics$DefaultIntrinsicMeasurable.measure-BRTryo0(LayoutModifierNode.kt:349)
+04-13 17:06:07.956 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.graphics.SimpleGraphicsLayerModifier.measure-3p2s80s(GraphicsLayerModifier.kt:843)
+04-13 17:06:07.956 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.LayoutModifierNode$maxIntrinsicHeight$1.measure-3p2s80s(LayoutModifierNode.kt:99)
+04-13 17:06:07.956 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.NodeMeasuringIntrinsics.maxHeight$ui(LayoutModifierNode.kt:322)
+04-13 17:06:07.956 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.LayoutModifierNode.maxIntrinsicHeight(LayoutModifierNode.kt:98)
+04-13 17:06:07.956 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.LayoutModifierNodeCoordinator.maxIntrinsicHeight(LayoutModifierNodeCoordinator.kt:223)
+04-13 17:06:07.956 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.NodeMeasuringIntrinsics$DefaultIntrinsicMeasurable.measure-BRTryo0(LayoutModifierNode.kt:349)
+04-13 17:06:07.956 13502 13502 E AndroidRuntime: 	at androidx.compose.foundation.lazy.layout.LazyLayoutBeyondBoundsProviderModifierNode.measure-3p2s80s(LazyLayoutBeyondBoundsModifierLocal.kt:122)
+04-13 17:06:07.956 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.LayoutModifierNode$maxIntrinsicHeight$1.measure-3p2s80s(LayoutModifierNode.kt:99)
+04-13 17:06:07.956 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.NodeMeasuringIntrinsics.maxHeight$ui(LayoutModifierNode.kt:322)
+04-13 17:06:07.956 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.LayoutModifierNode.maxIntrinsicHeight(LayoutModifierNode.kt:98)
+04-13 17:06:07.956 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.LayoutModifierNodeCoordinator.maxIntrinsicHeight(LayoutModifierNodeCoordinator.kt:223)
+04-13 17:06:07.956 13502 13502 E AndroidRuntime: 	at androidx.compose.foundation.layout.IntrinsicHeightNode.calculateContentConstraints-l58MMJ0(Intrinsic.kt:245)
+04-13 17:06:07.956 13502 13502 E AndroidRuntime: 	at androidx.compose.foundation.layout.IntrinsicSizeModifier.measure-3p2s80s(Intrinsic.kt:281)
+04-13 17:06:07.956 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.LayoutModifierNodeCoordinator.measure-BRTryo0(LayoutModifierNodeCoordinator.kt:190)
+04-13 17:06:07.956 13502 13502 E AndroidRuntime: 	at androidx.compose.foundation.layout.PaddingNode.measure-3p2s80s(Padding.kt:406)
+04-13 17:06:07.956 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.LayoutModifierNodeCoordinator.measure-BRTryo0(LayoutModifierNodeCoordinator.kt:190)
+04-13 17:06:07.956 13502 13502 E AndroidRuntime: 	at androidx.compose.foundation.layout.FillNode.measure-3p2s80s(Size.kt:721)
+04-13 17:06:07.956 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.LayoutModifierNodeCoordinator.measure-BRTryo0(LayoutModifierNodeCoordinator.kt:190)
+04-13 17:06:07.956 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.MeasurePassDelegate$performMeasureBlock$1.invoke(MeasurePassDelegate.kt:173)
+04-13 17:06:07.956 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.MeasurePassDelegate$performMeasureBlock$1.invoke(MeasurePassDelegate.kt:172)
+04-13 17:06:07.956 13502 13502 E AndroidRuntime: 	at androidx.compose.runtime.snapshots.SnapshotStateObserver.observeReads(SnapshotStateObserver.kt:699)
+04-13 17:06:07.956 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.MeasurePassDelegate.remeasure-BRTryo0(MeasurePassDelegate.kt:1064)
+04-13 17:06:07.956 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.MeasurePassDelegate.measure-BRTryo0(MeasurePassDelegate.kt:470)
+04-13 17:06:07.956 13502 13502 E AndroidRuntime: 	at androidx.compose.foundation.layout.BoxMeasurePolicy.measure-3p2s80s(Box.kt:145)
+04-13 17:06:07.956 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.InnerNodeCoordinator.measure-BRTryo0(InnerNodeCoordinator.kt:128)
+04-13 17:06:07.956 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.graphics.SimpleGraphicsLayerModifier.measure-3p2s80s(GraphicsLayerModifier.kt:843)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.LayoutModifierNodeCoordinator.measure-BRTryo0(LayoutModifierNodeCoordinator.kt:190)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.foundation.layout.FillNode.measure-3p2s80s(Size.kt:721)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.LayoutModifierNodeCoordinator.measure-BRTryo0(LayoutModifierNodeCoordinator.kt:190)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.MeasurePassDelegate$performMeasureBlock$1.invoke(MeasurePassDelegate.kt:173)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.MeasurePassDelegate$performMeasureBlock$1.invoke(MeasurePassDelegate.kt:172)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.runtime.snapshots.SnapshotStateObserver.observeReads(SnapshotStateObserver.kt:699)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.MeasurePassDelegate.remeasure-BRTryo0(MeasurePassDelegate.kt:1064)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.MeasurePassDelegate.measure-BRTryo0(MeasurePassDelegate.kt:470)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.foundation.layout.BoxMeasurePolicy.measure-3p2s80s(Box.kt:145)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.InnerNodeCoordinator.measure-BRTryo0(InnerNodeCoordinator.kt:128)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.MeasurePassDelegate$performMeasureBlock$1.invoke(MeasurePassDelegate.kt:173)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.MeasurePassDelegate$performMeasureBlock$1.invoke(MeasurePassDelegate.kt:172)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.runtime.snapshots.SnapshotStateObserver.observeReads(SnapshotStateObserver.kt:699)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.MeasurePassDelegate.remeasure-BRTryo0(MeasurePassDelegate.kt:1064)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.MeasurePassDelegate.measure-BRTryo0(MeasurePassDelegate.kt:470)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.foundation.layout.BoxMeasurePolicy.measure-3p2s80s(Box.kt:168)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.InnerNodeCoordinator.measure-BRTryo0(InnerNodeCoordinator.kt:128)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.foundation.layout.FillNode.measure-3p2s80s(Size.kt:721)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.LayoutModifierNodeCoordinator.measure-BRTryo0(LayoutModifierNodeCoordinator.kt:190)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.MeasurePassDelegate$performMeasureBlock$1.invoke(MeasurePassDelegate.kt:173)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.MeasurePassDelegate$performMeasureBlock$1.invoke(MeasurePassDelegate.kt:172)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.runtime.snapshots.SnapshotStateObserver.observeReads(SnapshotStateObserver.kt:699)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.MeasurePassDelegate.remeasure-BRTryo0(MeasurePassDelegate.kt:1064)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.MeasurePassDelegate.measure-BRTryo0(MeasurePassDelegate.kt:470)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.foundation.layout.BoxMeasurePolicy.measure-3p2s80s(Box.kt:145)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.InnerNodeCoordinator.measure-BRTryo0(InnerNodeCoordinator.kt:128)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.foundation.layout.FillNode.measure-3p2s80s(Size.kt:721)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.LayoutModifierNodeCoordinator.measure-BRTryo0(LayoutModifierNodeCoordinator.kt:190)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.MeasurePassDelegate$performMeasureBlock$1.invoke(MeasurePassDelegate.kt:173)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.MeasurePassDelegate$performMeasureBlock$1.invoke(MeasurePassDelegate.kt:172)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.runtime.snapshots.SnapshotStateObserver.observeReads(SnapshotStateObserver.kt:699)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.MeasurePassDelegate.remeasure-BRTryo0(MeasurePassDelegate.kt:1064)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.MeasurePassDelegate.measure-BRTryo0(MeasurePassDelegate.kt:470)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.foundation.layout.BoxMeasurePolicy.measure-3p2s80s(Box.kt:145)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.InnerNodeCoordinator.measure-BRTryo0(InnerNodeCoordinator.kt:128)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.graphics.SimpleGraphicsLayerModifier.measure-3p2s80s(GraphicsLayerModifier.kt:843)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.LayoutModifierNodeCoordinator.measure-BRTryo0(LayoutModifierNodeCoordinator.kt:190)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.MeasurePassDelegate$performMeasureBlock$1.invoke(MeasurePassDelegate.kt:173)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.MeasurePassDelegate$performMeasureBlock$1.invoke(MeasurePassDelegate.kt:172)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.runtime.snapshots.SnapshotStateObserver.observeReads(SnapshotStateObserver.kt:699)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.MeasurePassDelegate.remeasure-BRTryo0(MeasurePassDelegate.kt:1064)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.MeasurePassDelegate.measure-BRTryo0(MeasurePassDelegate.kt:470)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.layout.RootMeasurePolicy.measure-3p2s80s(RootMeasurePolicy.kt:37)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.InnerNodeCoordinator.measure-BRTryo0(InnerNodeCoordinator.kt:128)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.platform.AndroidComposeView$RootModifierNode.measure-3p2s80s(AndroidComposeView.android.kt:3384)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.LayoutModifierNodeCoordinator.measure-BRTryo0(LayoutModifierNodeCoordinator.kt:190)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.MeasurePassDelegate$performMeasureBlock$1.invoke(MeasurePassDelegate.kt:173)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.MeasurePassDelegate$performMeasureBlock$1.invoke(MeasurePassDelegate.kt:172)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.runtime.snapshots.SnapshotStateObserver.observeReads(SnapshotStateObserver.kt:728)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.MeasurePassDelegate.remeasure-BRTryo0(MeasurePassDelegate.kt:1064)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.LayoutNode.remeasure-_Sx5XlM$ui(LayoutNode.kt:1281)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.MeasureAndLayoutDelegate.doRemeasure-sdFAvZA(MeasureAndLayoutDelegate.kt:378)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.MeasureAndLayoutDelegate.remeasureOnly(MeasureAndLayoutDelegate.kt:652)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.node.MeasureAndLayoutDelegate.measureOnly(MeasureAndLayoutDelegate.kt:446)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.platform.AndroidComposeView.onMeasure(AndroidComposeView.android.kt:1847)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at android.view.View.measure(View.java:26736)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.platform.AbstractComposeView.internalOnMeasure$ui(ComposeView.android.kt:314)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at androidx.compose.ui.platform.AbstractComposeView.onMeasure(ComposeView.android.kt:301)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at android.view.View.measure(View.java:26736)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:7095)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at android.widget.FrameLayout.onMeasure(FrameLayout.java:194)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at android.view.View.measure(View.java:26736)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:7095)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at android.widget.LinearLayout.measureChildBeforeLayout(LinearLayout.java:1552)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at android.widget.LinearLayout.measureVertical(LinearLayout.java:842)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at android.widget.LinearLayout.onMeasure(LinearLayout.java:721)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at android.view.View.measure(View.java:26736)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at android.view.ViewGroup.measureChildWithMargins(ViewGroup.java:7095)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at android.widget.FrameLayout.onMeasure(FrameLayout.java:194)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at com.android.internal.policy.DecorView.onMeasure(DecorView.java:833)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at android.view.View.measure(View.java:26736)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at android.view.ViewRootImpl.performMeasure(ViewRootImpl.java:4189)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at android.view.ViewRootImpl.measureHierarchy(ViewRootImpl.java:2865)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at android.view.ViewRootImpl.performTraversals(ViewRootImpl.java:3145)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at android.view.ViewRootImpl.doTraversal(ViewRootImpl.java:2575)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at android.view.ViewRootImpl$TraversalRunnable.run(ViewRootImpl.java:9638)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at android.view.Choreographer$CallbackRecord.run(Choreographer.java:1386)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at android.view.Choreographer$CallbackRecord.run(Choreographer.java:1394)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at android.view.Choreographer.doCallbacks(Choreographer.java:1013)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at android.view.Choreographer.doFrame(Choreographer.java:911)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at android.view.Choreographer$FrameDisplayEventReceiver.run(Choreographer.java:1366)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at android.os.Handler.handleCallback(Handler.java:942)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:99)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:211)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:300)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:8232)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:580)
+04-13 17:06:07.957 13502 13502 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1028)
+04-13 17:06:08.033  1556  1810 E ProcessManager: error write exception log
+04-13 17:06:08.072  3692  3995 E FileUtils: err open mi_exception_log errno=2
+04-13 17:06:08.072  3692  3995 E FileUtils: err write to mi_exception_log
+04-13 17:06:08.098 11557 11690 E fb4a.BitmapMemoryCacheTrimStrategy: unknown trim type: OnSystemModerateMemory
+04-13 17:06:08.099 11557 11690 E fb4a.NativeMemoryCacheTrimStrategy: unknown trim type: OnSystemModerateMemory
+04-13 17:06:08.100  1556  1584 E FileUtils: err open mi_exception_log errno=2
+04-13 17:06:08.100  1556  1584 E FileUtils: err write to mi_exception_log
+04-13 17:06:08.108  6257  6618 E ThermalInfoUtils: getCurrentCapacity Exceptionjava.io.FileNotFoundException: /sys/class/power_supply/battery/charge_counter: open failed: EACCES (Permission denied)
+04-13 17:06:08.112 19154 27407 E ActivityManagerWrapper: get all recent tasks force including 27129
+04-13 17:06:08.122  6257  6620 E FileUtils: err open mi_exception_log errno=2
+04-13 17:06:08.122  6257  6620 E FileUtils: err write to mi_exception_log
+04-13 17:06:08.122  4177  4177 E FileUtils: err write to mi_exception_log
+04-13 17:06:08.125 19154 19154 E FileUtils: err write to mi_exception_log
+04-13 17:06:08.130  2166  2394 E FileUtils: err open mi_exception_log errno=2
+04-13 17:06:08.130  2166  2394 E FileUtils: err write to mi_exception_log
+04-13 17:06:08.134 19154 27407 E ActivityManagerWrapper: getRecentTasks: size=34
+04-13 17:06:08.134 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27438   userId=0   baseIntent=Intent { act=null flag=268435456 cmp=ComponentInfo{com.example.timedrop/com.example.timedrop.MainActivity} }
+04-13 17:06:08.134 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27433   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.google.android.dialer/com.google.android.dialer.extensions.GoogleDialtactsActivity} }
+04-13 17:06:08.134 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27366   userId=0   baseIntent=Intent { act=null flag=268533760 cmp=ComponentInfo{com.instagram.android/com.instagram.mainactivity.InstagramMainActivity} }
+04-13 17:06:08.134 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27430   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.blockchainvault/com.pinetwork.MainActivity} }
+04-13 17:06:08.134 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27226   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.facebook.orca/com.facebook.orca.auth.StartScreenActivity} }
+04-13 17:06:08.134 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27206   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.zhiliaoapp.musically/com.ss.android.ugc.aweme.splash.SplashActivity} }
+04-13 17:06:08.134 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27355   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.facebook.katana/com.facebook.katana.LoginActivity} }
+04-13 17:06:08.134 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27269   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.whatsapp/com.whatsapp.Main} }
+04-13 17:06:08.134 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27357   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.microsoft.teams/com.microsoft.skype.teams.Launcher} }
+04-13 17:06:08.134 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27384   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.wssc.simpleclock/com.wssc.simpleclock.ui.activity.MainActivity} }
+04-13 17:06:08.134 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27304   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.spotify.music/com.spotify.music.MainActivity} }
+04-13 17:06:08.134 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27387   userId=0   baseIntent=Intent { act=android.settings.SETTINGS flag=335544320 cmp=ComponentInfo{com.android.settings/com.android.settings.MiuiSettings} }
+04-13 17:06:08.134 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27396   userId=0   baseIntent=Intent { act=null flag=335544320 cmp=ComponentInfo{com.fin.plan/com.fin.plan.presentation.MainActivity} }
+04-13 17:06:08.134 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27392   userId=0   baseIntent=Intent { act=null flag=335544320 cmp=ComponentInfo{com.android.updater/com.android.updater.MainActivity} }
+04-13 17:06:08.134 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27389   userId=0   baseIntent=Intent { act=com.google.android.finsky.phoenix.ACQUIRE flag=268435456 cmp=ComponentInfo{com.android.vending/com.google.android.finsky.billing.acquire.SheetUiBuilderHostActivity} }
+04-13 17:06:08.134 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27383   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.anthropic.claude/com.anthropic.claude.mainactivity.MainActivity} }
+04-13 17:06:08.135 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27375   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{app.gainaura.habits/app.gainaura.habits.MainActivity} }
+04-13 17:06:08.135 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27378   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.microsoft.office.outlook/com.microsoft.office.outlook.MainActivity} }
+04-13 17:06:08.135 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27368   userId=0   baseIntent=Intent { act=android.intent.action.VIEW flag=268435456 cmp=ComponentInfo{com.linkedin.android/com.linkedin.android.urls.DeeplinkActivity} }
+04-13 17:06:08.135 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27367   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.google.android.apps.maps/com.google.android.maps.MapsActivity} }
+04-13 17:06:08.135 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27104   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.openai.chatgpt/com.openai.chatgpt.MainActivity} }
+04-13 17:06:08.135 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27361   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.mercadopago.wallet/com.mercadopago.wallet.SplashActivityAliasDefault} }
+04-13 17:06:08.135 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27351   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.reddit.frontpage/launcher.default} }
+04-13 17:06:08.135 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27353   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{org.telegram.messenger/org.telegram.messenger.DefaultIcon} }
+04-13 17:06:08.135 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27346   userId=0   baseIntent=Intent { act=null flag=335609856 cmp=ComponentInfo{com.amazon.mShop.android.shopping/com.amazon.mShop.httpUrlDeepLink.PublicUrlActivity} }
+04-13 17:06:08.135 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27334   userId=0   baseIntent=Intent { act=android.intent.action.VIEW flag=318767107 cmp=ComponentInfo{mega.privacy.android.app/mega.privacy.android.app.presentation.pdfviewer.PdfViewerActivity} }
+04-13 17:06:08.135 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27328   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.suifitime.suifileexplorer.root.pro/com.suifitime.suifileexplorer.root.DocumentsActivity} }
+04-13 17:06:08.135 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27325   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.google.android.apps.translate/com.google.android.apps.translate.TranslateActivity} }
+04-13 17:06:08.135 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27268   userId=0   baseIntent=Intent { act=null flag=805306368 cmp=ComponentInfo{com.vizta.wefly/com.moba.unityplugin.MobaGameUnityActivity} }
+04-13 17:06:08.135 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27322   userId=0   baseIntent=Intent { act=null flag=872415232 cmp=ComponentInfo{com.supercell.clashofclans/com.supercell.titan.GameApp} }
+04-13 17:06:08.135 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27241   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.tippingcanoe.promodescuentos/com.pepper.apps.android.presentation.MainActivityDarkIcon} }
+04-13 17:06:08.135 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27320   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.android.camera/com.android.camera.Camera} }
+04-13 17:06:08.135 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27318   userId=0   baseIntent=Intent { act=null flag=268435456 cmp=ComponentInfo{com.miui.android.fashiongallery/com.miui.cw.feature.ui.home.HomeActivity} }
+04-13 17:06:08.135 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27230   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=268435456 cmp=ComponentInfo{com.duolingo/com.duolingo.splash.LaunchActivity} }
+04-13 17:06:08.157 19154 19154 E FileUtils: err write to mi_exception_log
+04-13 17:06:08.181  6257  6970 E FileUtils: err open mi_exception_log errno=2
+04-13 17:06:08.181  6257  6970 E FileUtils: err write to mi_exception_log
+04-13 17:06:08.208 19154 19182 E Launcher: notifyBackGestureStatus:run usingFsGesture=true   show=true   focus=false   pause=false
+04-13 17:06:08.211 19154 19182 E Launcher: notifyBackGestureStatus:run usingFsGesture=true   show=true   focus=false   pause=false
+04-13 17:06:08.222 19154 19154 E RotationHelper: setCurrentTransitionRequest: request=0
+04-13 17:06:08.222 19154 19154 E RotationHelper: setCurrentTransitionRequest: request=0
+04-13 17:06:08.267 19154 27407 E FileUtils: err open mi_exception_log errno=2
+04-13 17:06:08.267 19154 27407 E FileUtils: err write to mi_exception_log
+04-13 17:06:08.285  4177 13573 E DropBoxUtil: [DropboxRealtime] null InputStream [CONTEXT service_id=254 ]
+04-13 17:06:08.285  4177 13573 E DropBoxUtil: java.io.IOException: null InputStream
+04-13 17:06:08.285  4177 13573 E DropBoxUtil: 	at fhli.c(:com.google.android.gms@261332029@26.13.32 (190400-895912391):179)
+04-13 17:06:08.285  4177 13573 E DropBoxUtil: 	at fhli.d(:com.google.android.gms@261332029@26.13.32 (190400-895912391):9)
+04-13 17:06:08.285  4177 13573 E DropBoxUtil: 	at fhjq.i(:com.google.android.gms@261332029@26.13.32 (190400-895912391):321)
+04-13 17:06:08.285  4177 13573 E DropBoxUtil: 	at fhha.d(:com.google.android.gms@261332029@26.13.32 (190400-895912391):1)
+04-13 17:06:08.285  4177 13573 E DropBoxUtil: 	at fhjj.c(:com.google.android.gms@261332029@26.13.32 (190400-895912391):196)
+04-13 17:06:08.285  4177 13573 E DropBoxUtil: 	at com.google.android.gms.stats.service.DropBoxEntryAddedChimeraService.a(:com.google.android.gms@261332029@26.13.32 (190400-895912391):183)
+04-13 17:06:08.285  4177 13573 E DropBoxUtil: 	at com.google.android.gms.framework.tracing.wrapper.TracingIntentService.onHandleIntent(:com.google.android.gms@261332029@26.13.32 (190400-895912391):13)
+04-13 17:06:08.285  4177 13573 E DropBoxUtil: 	at aapn.handleMessage(:com.google.android.gms@261332029@26.13.32 (190400-895912391):7)
+04-13 17:06:08.285  4177 13573 E DropBoxUtil: 	at android.os.Handler.dispatchMessage(Handler.java:106)
+04-13 17:06:08.285  4177 13573 E DropBoxUtil: 	at android.os.Looper.loopOnce(Looper.java:211)
+04-13 17:06:08.285  4177 13573 E DropBoxUtil: 	at android.os.Looper.loop(Looper.java:300)
+04-13 17:06:08.285  4177 13573 E DropBoxUtil: 	at android.os.HandlerThread.run(HandlerThread.java:67)
+04-13 17:06:08.286  4177 13573 E DropBoxUtil: [DropboxRealtime] null InputStream [CONTEXT service_id=254 ]
+04-13 17:06:08.286  4177 13573 E DropBoxUtil: java.io.IOException: null InputStream
+04-13 17:06:08.286  4177 13573 E DropBoxUtil: 	at fhli.c(:com.google.android.gms@261332029@26.13.32 (190400-895912391):179)
+04-13 17:06:08.286  4177 13573 E DropBoxUtil: 	at fhli.d(:com.google.android.gms@261332029@26.13.32 (190400-895912391):9)
+04-13 17:06:08.286  4177 13573 E DropBoxUtil: 	at fhjq.i(:com.google.android.gms@261332029@26.13.32 (190400-895912391):321)
+04-13 17:06:08.286  4177 13573 E DropBoxUtil: 	at fhha.d(:com.google.android.gms@261332029@26.13.32 (190400-895912391):1)
+04-13 17:06:08.286  4177 13573 E DropBoxUtil: 	at fhjj.c(:com.google.android.gms@261332029@26.13.32 (190400-895912391):196)
+04-13 17:06:08.286  4177 13573 E DropBoxUtil: 	at com.google.android.gms.stats.service.DropBoxEntryAddedChimeraService.a(:com.google.android.gms@261332029@26.13.32 (190400-895912391):183)
+04-13 17:06:08.286  4177 13573 E DropBoxUtil: 	at com.google.android.gms.framework.tracing.wrapper.TracingIntentService.onHandleIntent(:com.google.android.gms@261332029@26.13.32 (190400-895912391):13)
+04-13 17:06:08.286  4177 13573 E DropBoxUtil: 	at aapn.handleMessage(:com.google.android.gms@261332029@26.13.32 (190400-895912391):7)
+04-13 17:06:08.286  4177 13573 E DropBoxUtil: 	at android.os.Handler.dispatchMessage(Handler.java:106)
+04-13 17:06:08.286  4177 13573 E DropBoxUtil: 	at android.os.Looper.loopOnce(Looper.java:211)
+04-13 17:06:08.286  4177 13573 E DropBoxUtil: 	at android.os.Looper.loop(Looper.java:300)
+04-13 17:06:08.286  4177 13573 E DropBoxUtil: 	at android.os.HandlerThread.run(HandlerThread.java:67)
+04-13 17:06:08.288  4177 13573 E DropBoxUtil: [DropboxRealtime] null InputStream [CONTEXT service_id=254 ]
+04-13 17:06:08.288  4177 13573 E DropBoxUtil: java.io.IOException: null InputStream
+04-13 17:06:08.288  4177 13573 E DropBoxUtil: 	at fhli.c(:com.google.android.gms@261332029@26.13.32 (190400-895912391):179)
+04-13 17:06:08.288  4177 13573 E DropBoxUtil: 	at fhli.d(:com.google.android.gms@261332029@26.13.32 (190400-895912391):9)
+04-13 17:06:08.288  4177 13573 E DropBoxUtil: 	at fhjq.i(:com.google.android.gms@261332029@26.13.32 (190400-895912391):321)
+04-13 17:06:08.288  4177 13573 E DropBoxUtil: 	at fhha.d(:com.google.android.gms@261332029@26.13.32 (190400-895912391):1)
+04-13 17:06:08.288  4177 13573 E DropBoxUtil: 	at fhjj.c(:com.google.android.gms@261332029@26.13.32 (190400-895912391):196)
+04-13 17:06:08.288  4177 13573 E DropBoxUtil: 	at com.google.android.gms.stats.service.DropBoxEntryAddedChimeraService.a(:com.google.android.gms@261332029@26.13.32 (190400-895912391):183)
+04-13 17:06:08.288  4177 13573 E DropBoxUtil: 	at com.google.android.gms.framework.tracing.wrapper.TracingIntentService.onHandleIntent(:com.google.android.gms@261332029@26.13.32 (190400-895912391):13)
+04-13 17:06:08.288  4177 13573 E DropBoxUtil: 	at aapn.handleMessage(:com.google.android.gms@261332029@26.13.32 (190400-895912391):7)
+04-13 17:06:08.288  4177 13573 E DropBoxUtil: 	at android.os.Handler.dispatchMessage(Handler.java:106)
+04-13 17:06:08.288  4177 13573 E DropBoxUtil: 	at android.os.Looper.loopOnce(Looper.java:211)
+04-13 17:06:08.288  4177 13573 E DropBoxUtil: 	at android.os.Looper.loop(Looper.java:300)
+04-13 17:06:08.288  4177 13573 E DropBoxUtil: 	at android.os.HandlerThread.run(HandlerThread.java:67)
+04-13 17:06:08.302  4177 13573 E FileUtils: err open mi_exception_log errno=2
+04-13 17:06:08.302  4177 13573 E FileUtils: err write to mi_exception_log
+04-13 17:06:09.125  1062  1105 E WifiStandalone: conditional wait timedout
+04-13 17:06:09.635   804   893 E Situation: processEvent, handle:26, flush_action:0
+04-13 17:06:10.469  9675  3332 E bt_stack: [ERROR:com_android_bluetooth_btservice_ActivityAttribution.cpp(172)] Failed to get ActivityAttribution Interface
+04-13 17:06:10.478  9675  3332 E bt_stack: [ERROR:com_android_bluetooth_btservice_ActivityAttribution.cpp(172)] Failed to get ActivityAttribution Interface
+04-13 17:06:10.549  3760  8882 E SLM-SRV-SLAService: readLine:
+04-13 17:06:10.549  3760  8882 E SLM-SRV-SLAService: java.io.FileNotFoundException: /sys/class/thermal/thermal_message/balance_mode: open failed: ENOENT (No such file or directory)
+04-13 17:06:10.549  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.IoBridge.open(IoBridge.java:574)
+04-13 17:06:10.549  3760  8882 E SLM-SRV-SLAService: 	at java.io.FileInputStream.<init>(FileInputStream.java:179)
+04-13 17:06:10.549  3760  8882 E SLM-SRV-SLAService: 	at java.io.FileInputStream.<init>(FileInputStream.java:133)
+04-13 17:06:10.549  3760  8882 E SLM-SRV-SLAService: 	at java.io.FileReader.<init>(FileReader.java:60)
+04-13 17:06:10.549  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService.readLine(SLAService.java:1237)
+04-13 17:06:10.549  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService.isPerformanceMode(SLAService.java:1262)
+04-13 17:06:10.549  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService.checktemp(SLAService.java:1293)
+04-13 17:06:10.549  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService.access$2500(SLAService.java:125)
+04-13 17:06:10.549  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService$ThermalStateListener.onEvent(SLAService.java:1226)
+04-13 17:06:10.549  3760  8882 E SLM-SRV-SLAService: 	at android.os.FileObserver$ObserverThread.onEvent(FileObserver.java:166)
+04-13 17:06:10.549  3760  8882 E SLM-SRV-SLAService: 	at android.os.FileObserver$ObserverThread.observe(Native Method)
+04-13 17:06:10.549  3760  8882 E SLM-SRV-SLAService: 	at android.os.FileObserver$ObserverThread.run(FileObserver.java:116)
+04-13 17:06:10.549  3760  8882 E SLM-SRV-SLAService: Caused by: android.system.ErrnoException: open failed: ENOENT (No such file or directory)
+04-13 17:06:10.549  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.Linux.open(Native Method)
+04-13 17:06:10.549  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.ForwardingOs.open(ForwardingOs.java:574)
+04-13 17:06:10.549  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.BlockGuardOs.open(BlockGuardOs.java:274)
+04-13 17:06:10.549  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.ForwardingOs.open(ForwardingOs.java:574)
+04-13 17:06:10.549  3760  8882 E SLM-SRV-SLAService: 	at android.app.ActivityThread$AndroidOs.open(ActivityThread.java:8108)
+04-13 17:06:10.549  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.IoBridge.open(IoBridge.java:560)
+04-13 17:06:10.549  3760  8882 E SLM-SRV-SLAService: 	... 11 more
+04-13 17:06:10.550  3760  8882 E SLM-SRV-SLAService: readLine:
+04-13 17:06:10.550  3760  8882 E SLM-SRV-SLAService: java.io.FileNotFoundException: /sys/class/thermal/thermal_message/balance_mode: open failed: ENOENT (No such file or directory)
+04-13 17:06:10.550  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.IoBridge.open(IoBridge.java:574)
+04-13 17:06:10.550  3760  8882 E SLM-SRV-SLAService: 	at java.io.FileInputStream.<init>(FileInputStream.java:179)
+04-13 17:06:10.550  3760  8882 E SLM-SRV-SLAService: 	at java.io.FileInputStream.<init>(FileInputStream.java:133)
+04-13 17:06:10.550  3760  8882 E SLM-SRV-SLAService: 	at java.io.FileReader.<init>(FileReader.java:60)
+04-13 17:06:10.550  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService.readLine(SLAService.java:1237)
+04-13 17:06:10.550  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService.isPerformanceMode(SLAService.java:1262)
+04-13 17:06:10.550  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService.checktemp(SLAService.java:1294)
+04-13 17:06:10.550  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService.access$2500(SLAService.java:125)
+04-13 17:06:10.550  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService$ThermalStateListener.onEvent(SLAService.java:1226)
+04-13 17:06:10.550  3760  8882 E SLM-SRV-SLAService: 	at android.os.FileObserver$ObserverThread.onEvent(FileObserver.java:166)
+04-13 17:06:10.550  3760  8882 E SLM-SRV-SLAService: 	at android.os.FileObserver$ObserverThread.observe(Native Method)
+04-13 17:06:10.550  3760  8882 E SLM-SRV-SLAService: 	at android.os.FileObserver$ObserverThread.run(FileObserver.java:116)
+04-13 17:06:10.550  3760  8882 E SLM-SRV-SLAService: Caused by: android.system.ErrnoException: open failed: ENOENT (No such file or directory)
+04-13 17:06:10.550  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.Linux.open(Native Method)
+04-13 17:06:10.550  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.ForwardingOs.open(ForwardingOs.java:574)
+04-13 17:06:10.550  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.BlockGuardOs.open(BlockGuardOs.java:274)
+04-13 17:06:10.550  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.ForwardingOs.open(ForwardingOs.java:574)
+04-13 17:06:10.550  3760  8882 E SLM-SRV-SLAService: 	at android.app.ActivityThread$AndroidOs.open(ActivityThread.java:8108)
+04-13 17:06:10.550  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.IoBridge.open(IoBridge.java:560)
+04-13 17:06:10.550  3760  8882 E SLM-SRV-SLAService: 	... 11 more
+04-13 17:06:11.004 12689 13436 E FbnsAIDLClientManager: Max Try reached for binding to FbnsAIDLService, threadId 11676
+04-13 17:06:11.005 12689 13436 E FbnsAIDLClientManager: Fbns AIDL request got RemoteException
+04-13 17:06:11.005 12689 13436 E FbnsAIDLClientManager: android.os.RemoteException: AIDLService is not bound
+04-13 17:06:11.005 12689 13436 E FbnsAIDLClientManager: 	at X.9kk.call(Unknown Source:376)
+04-13 17:06:11.005 12689 13436 E FbnsAIDLClientManager: 	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+04-13 17:06:11.005 12689 13436 E FbnsAIDLClientManager: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1154)
+04-13 17:06:11.005 12689 13436 E FbnsAIDLClientManager: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:652)
+04-13 17:06:11.005 12689 13436 E FbnsAIDLClientManager: 	at java.lang.Thread.run(Thread.java:1564)
+04-13 17:06:20.549  3760  8882 E SLM-SRV-SLAService: readLine:
+04-13 17:06:20.549  3760  8882 E SLM-SRV-SLAService: java.io.FileNotFoundException: /sys/class/thermal/thermal_message/balance_mode: open failed: ENOENT (No such file or directory)
+04-13 17:06:20.549  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.IoBridge.open(IoBridge.java:574)
+04-13 17:06:20.549  3760  8882 E SLM-SRV-SLAService: 	at java.io.FileInputStream.<init>(FileInputStream.java:179)
+04-13 17:06:20.549  3760  8882 E SLM-SRV-SLAService: 	at java.io.FileInputStream.<init>(FileInputStream.java:133)
+04-13 17:06:20.549  3760  8882 E SLM-SRV-SLAService: 	at java.io.FileReader.<init>(FileReader.java:60)
+04-13 17:06:20.549  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService.readLine(SLAService.java:1237)
+04-13 17:06:20.549  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService.isPerformanceMode(SLAService.java:1262)
+04-13 17:06:20.549  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService.checktemp(SLAService.java:1293)
+04-13 17:06:20.549  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService.access$2500(SLAService.java:125)
+04-13 17:06:20.549  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService$ThermalStateListener.onEvent(SLAService.java:1226)
+04-13 17:06:20.549  3760  8882 E SLM-SRV-SLAService: 	at android.os.FileObserver$ObserverThread.onEvent(FileObserver.java:166)
+04-13 17:06:20.549  3760  8882 E SLM-SRV-SLAService: 	at android.os.FileObserver$ObserverThread.observe(Native Method)
+04-13 17:06:20.549  3760  8882 E SLM-SRV-SLAService: 	at android.os.FileObserver$ObserverThread.run(FileObserver.java:116)
+04-13 17:06:20.549  3760  8882 E SLM-SRV-SLAService: Caused by: android.system.ErrnoException: open failed: ENOENT (No such file or directory)
+04-13 17:06:20.549  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.Linux.open(Native Method)
+04-13 17:06:20.549  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.ForwardingOs.open(ForwardingOs.java:574)
+04-13 17:06:20.549  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.BlockGuardOs.open(BlockGuardOs.java:274)
+04-13 17:06:20.549  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.ForwardingOs.open(ForwardingOs.java:574)
+04-13 17:06:20.549  3760  8882 E SLM-SRV-SLAService: 	at android.app.ActivityThread$AndroidOs.open(ActivityThread.java:8108)
+04-13 17:06:20.549  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.IoBridge.open(IoBridge.java:560)
+04-13 17:06:20.549  3760  8882 E SLM-SRV-SLAService: 	... 11 more
+04-13 17:06:20.550  3760  8882 E SLM-SRV-SLAService: readLine:
+04-13 17:06:20.550  3760  8882 E SLM-SRV-SLAService: java.io.FileNotFoundException: /sys/class/thermal/thermal_message/balance_mode: open failed: ENOENT (No such file or directory)
+04-13 17:06:20.550  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.IoBridge.open(IoBridge.java:574)
+04-13 17:06:20.550  3760  8882 E SLM-SRV-SLAService: 	at java.io.FileInputStream.<init>(FileInputStream.java:179)
+04-13 17:06:20.550  3760  8882 E SLM-SRV-SLAService: 	at java.io.FileInputStream.<init>(FileInputStream.java:133)
+04-13 17:06:20.550  3760  8882 E SLM-SRV-SLAService: 	at java.io.FileReader.<init>(FileReader.java:60)
+04-13 17:06:20.550  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService.readLine(SLAService.java:1237)
+04-13 17:06:20.550  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService.isPerformanceMode(SLAService.java:1262)
+04-13 17:06:20.550  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService.checktemp(SLAService.java:1294)
+04-13 17:06:20.550  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService.access$2500(SLAService.java:125)
+04-13 17:06:20.550  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService$ThermalStateListener.onEvent(SLAService.java:1226)
+04-13 17:06:20.550  3760  8882 E SLM-SRV-SLAService: 	at android.os.FileObserver$ObserverThread.onEvent(FileObserver.java:166)
+04-13 17:06:20.550  3760  8882 E SLM-SRV-SLAService: 	at android.os.FileObserver$ObserverThread.observe(Native Method)
+04-13 17:06:20.550  3760  8882 E SLM-SRV-SLAService: 	at android.os.FileObserver$ObserverThread.run(FileObserver.java:116)
+04-13 17:06:20.550  3760  8882 E SLM-SRV-SLAService: Caused by: android.system.ErrnoException: open failed: ENOENT (No such file or directory)
+04-13 17:06:20.550  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.Linux.open(Native Method)
+04-13 17:06:20.550  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.ForwardingOs.open(ForwardingOs.java:574)
+04-13 17:06:20.550  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.BlockGuardOs.open(BlockGuardOs.java:274)
+04-13 17:06:20.550  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.ForwardingOs.open(ForwardingOs.java:574)
+04-13 17:06:20.550  3760  8882 E SLM-SRV-SLAService: 	at android.app.ActivityThread$AndroidOs.open(ActivityThread.java:8108)
+04-13 17:06:20.550  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.IoBridge.open(IoBridge.java:560)
+04-13 17:06:20.550  3760  8882 E SLM-SRV-SLAService: 	... 11 more
+04-13 17:06:28.366   811   811 E android.hardware.lights-service.mediatek: Lights id=0, size=6
+04-13 17:06:28.366   811   811 E android.hardware.lights-service.mediatek: Lights color=0x2c2, FlashMode=0,0,0
+04-13 17:06:28.380   811   811 E android.hardware.lights-service.mediatek: Lights id=0, size=6
+04-13 17:06:28.381   811   811 E android.hardware.lights-service.mediatek: Lights color=0x2aa, FlashMode=0,0,0
+04-13 17:06:28.398   811   811 E android.hardware.lights-service.mediatek: Lights id=0, size=6
+04-13 17:06:28.398   811   811 E android.hardware.lights-service.mediatek: Lights color=0x292, FlashMode=0,0,0
+04-13 17:06:28.414   811   811 E android.hardware.lights-service.mediatek: Lights id=0, size=6
+04-13 17:06:28.414   811   811 E android.hardware.lights-service.mediatek: Lights color=0x27a, FlashMode=0,0,0
+04-13 17:06:28.431   811   811 E android.hardware.lights-service.mediatek: Lights id=0, size=6
+04-13 17:06:28.431   811   811 E android.hardware.lights-service.mediatek: Lights color=0x262, FlashMode=0,0,0
+04-13 17:06:28.448   811   811 E android.hardware.lights-service.mediatek: Lights id=0, size=6
+04-13 17:06:28.448   811   811 E android.hardware.lights-service.mediatek: Lights color=0x24a, FlashMode=0,0,0
+04-13 17:06:28.465   811   811 E android.hardware.lights-service.mediatek: Lights id=0, size=6
+04-13 17:06:28.465   811   811 E android.hardware.lights-service.mediatek: Lights color=0x232, FlashMode=0,0,0
+04-13 17:06:28.480   811   811 E android.hardware.lights-service.mediatek: Lights id=0, size=6
+04-13 17:06:28.480   811   811 E android.hardware.lights-service.mediatek: Lights color=0x21a, FlashMode=0,0,0
+04-13 17:06:28.498   811   811 E android.hardware.lights-service.mediatek: Lights id=0, size=6
+04-13 17:06:28.498   811   811 E android.hardware.lights-service.mediatek: Lights color=0x202, FlashMode=0,0,0
+04-13 17:06:28.513   811   811 E android.hardware.lights-service.mediatek: Lights id=0, size=6
+04-13 17:06:28.513   811   811 E android.hardware.lights-service.mediatek: Lights color=0x1ea, FlashMode=0,0,0
+04-13 17:06:28.531   811   811 E android.hardware.lights-service.mediatek: Lights id=0, size=6
+04-13 17:06:28.531   811   811 E android.hardware.lights-service.mediatek: Lights color=0x1d2, FlashMode=0,0,0
+04-13 17:06:28.548   811   811 E android.hardware.lights-service.mediatek: Lights id=0, size=6
+04-13 17:06:28.548   811   811 E android.hardware.lights-service.mediatek: Lights color=0x1ba, FlashMode=0,0,0
+04-13 17:06:28.564   811   811 E android.hardware.lights-service.mediatek: Lights id=0, size=6
+04-13 17:06:28.565   811   811 E android.hardware.lights-service.mediatek: Lights color=0x1a2, FlashMode=0,0,0
+04-13 17:06:28.581   811   811 E android.hardware.lights-service.mediatek: Lights id=0, size=6
+04-13 17:06:28.581   811   811 E android.hardware.lights-service.mediatek: Lights color=0x18a, FlashMode=0,0,0
+04-13 17:06:28.597   811   811 E android.hardware.lights-service.mediatek: Lights id=0, size=6
+04-13 17:06:28.598   811   811 E android.hardware.lights-service.mediatek: Lights color=0x172, FlashMode=0,0,0
+04-13 17:06:28.614   811   811 E android.hardware.lights-service.mediatek: Lights id=0, size=6
+04-13 17:06:28.614   811   811 E android.hardware.lights-service.mediatek: Lights color=0x15a, FlashMode=0,0,0
+04-13 17:06:28.630   811   811 E android.hardware.lights-service.mediatek: Lights id=0, size=6
+04-13 17:06:28.631   811   811 E android.hardware.lights-service.mediatek: Lights color=0x142, FlashMode=0,0,0
+04-13 17:06:28.647   811   811 E android.hardware.lights-service.mediatek: Lights id=0, size=6
+04-13 17:06:28.647   811   811 E android.hardware.lights-service.mediatek: Lights color=0x12a, FlashMode=0,0,0
+04-13 17:06:28.664   811   811 E android.hardware.lights-service.mediatek: Lights id=0, size=6
+04-13 17:06:28.664   811   811 E android.hardware.lights-service.mediatek: Lights color=0x112, FlashMode=0,0,0
+04-13 17:06:28.680   811   811 E android.hardware.lights-service.mediatek: Lights id=0, size=6
+04-13 17:06:28.681   811   811 E android.hardware.lights-service.mediatek: Lights color=0xfa, FlashMode=0,0,0
+04-13 17:06:28.697   811   811 E android.hardware.lights-service.mediatek: Lights id=0, size=6
+04-13 17:06:28.697   811   811 E android.hardware.lights-service.mediatek: Lights color=0xe2, FlashMode=0,0,0
+04-13 17:06:28.714   811   811 E android.hardware.lights-service.mediatek: Lights id=0, size=6
+04-13 17:06:28.714   811   811 E android.hardware.lights-service.mediatek: Lights color=0xca, FlashMode=0,0,0
+04-13 17:06:28.730   811   811 E android.hardware.lights-service.mediatek: Lights id=0, size=6
+04-13 17:06:28.730   811   811 E android.hardware.lights-service.mediatek: Lights color=0xb2, FlashMode=0,0,0
+04-13 17:06:28.747   811   811 E android.hardware.lights-service.mediatek: Lights id=0, size=6
+04-13 17:06:28.747   811   811 E android.hardware.lights-service.mediatek: Lights color=0x9a, FlashMode=0,0,0
+04-13 17:06:28.763   811   811 E android.hardware.lights-service.mediatek: Lights id=0, size=6
+04-13 17:06:28.764   811   811 E android.hardware.lights-service.mediatek: Lights color=0x82, FlashMode=0,0,0
+04-13 17:06:28.780   811   811 E android.hardware.lights-service.mediatek: Lights id=0, size=6
+04-13 17:06:28.780   811   811 E android.hardware.lights-service.mediatek: Lights color=0x6a, FlashMode=0,0,0
+04-13 17:06:28.796   811   811 E android.hardware.lights-service.mediatek: Lights id=0, size=6
+04-13 17:06:28.796   811   811 E android.hardware.lights-service.mediatek: Lights color=0x52, FlashMode=0,0,0
+04-13 17:06:28.813   811   811 E android.hardware.lights-service.mediatek: Lights id=0, size=6
+04-13 17:06:28.813   811   811 E android.hardware.lights-service.mediatek: Lights color=0x3a, FlashMode=0,0,0
+04-13 17:06:28.830   811   811 E android.hardware.lights-service.mediatek: Lights id=0, size=6
+04-13 17:06:28.830   811   811 E android.hardware.lights-service.mediatek: Lights color=0x22, FlashMode=0,0,0
+04-13 17:06:28.846   811   811 E android.hardware.lights-service.mediatek: Lights id=0, size=6
+04-13 17:06:28.846   811   811 E android.hardware.lights-service.mediatek: Lights color=0x16, FlashMode=0,0,0
+04-13 17:06:29.129  1062  1105 E WifiStandalone: conditional wait timedout
+04-13 17:06:30.550  3760  8882 E SLM-SRV-SLAService: readLine:
+04-13 17:06:30.550  3760  8882 E SLM-SRV-SLAService: java.io.FileNotFoundException: /sys/class/thermal/thermal_message/balance_mode: open failed: ENOENT (No such file or directory)
+04-13 17:06:30.550  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.IoBridge.open(IoBridge.java:574)
+04-13 17:06:30.550  3760  8882 E SLM-SRV-SLAService: 	at java.io.FileInputStream.<init>(FileInputStream.java:179)
+04-13 17:06:30.550  3760  8882 E SLM-SRV-SLAService: 	at java.io.FileInputStream.<init>(FileInputStream.java:133)
+04-13 17:06:30.550  3760  8882 E SLM-SRV-SLAService: 	at java.io.FileReader.<init>(FileReader.java:60)
+04-13 17:06:30.550  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService.readLine(SLAService.java:1237)
+04-13 17:06:30.550  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService.isPerformanceMode(SLAService.java:1262)
+04-13 17:06:30.550  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService.checktemp(SLAService.java:1293)
+04-13 17:06:30.550  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService.access$2500(SLAService.java:125)
+04-13 17:06:30.550  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService$ThermalStateListener.onEvent(SLAService.java:1226)
+04-13 17:06:30.550  3760  8882 E SLM-SRV-SLAService: 	at android.os.FileObserver$ObserverThread.onEvent(FileObserver.java:166)
+04-13 17:06:30.550  3760  8882 E SLM-SRV-SLAService: 	at android.os.FileObserver$ObserverThread.observe(Native Method)
+04-13 17:06:30.550  3760  8882 E SLM-SRV-SLAService: 	at android.os.FileObserver$ObserverThread.run(FileObserver.java:116)
+04-13 17:06:30.550  3760  8882 E SLM-SRV-SLAService: Caused by: android.system.ErrnoException: open failed: ENOENT (No such file or directory)
+04-13 17:06:30.550  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.Linux.open(Native Method)
+04-13 17:06:30.550  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.ForwardingOs.open(ForwardingOs.java:574)
+04-13 17:06:30.550  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.BlockGuardOs.open(BlockGuardOs.java:274)
+04-13 17:06:30.550  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.ForwardingOs.open(ForwardingOs.java:574)
+04-13 17:06:30.550  3760  8882 E SLM-SRV-SLAService: 	at android.app.ActivityThread$AndroidOs.open(ActivityThread.java:8108)
+04-13 17:06:30.550  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.IoBridge.open(IoBridge.java:560)
+04-13 17:06:30.550  3760  8882 E SLM-SRV-SLAService: 	... 11 more
+04-13 17:06:30.550  3760  8882 E SLM-SRV-SLAService: readLine:
+04-13 17:06:30.550  3760  8882 E SLM-SRV-SLAService: java.io.FileNotFoundException: /sys/class/thermal/thermal_message/balance_mode: open failed: ENOENT (No such file or directory)
+04-13 17:06:30.550  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.IoBridge.open(IoBridge.java:574)
+04-13 17:06:30.550  3760  8882 E SLM-SRV-SLAService: 	at java.io.FileInputStream.<init>(FileInputStream.java:179)
+04-13 17:06:30.550  3760  8882 E SLM-SRV-SLAService: 	at java.io.FileInputStream.<init>(FileInputStream.java:133)
+04-13 17:06:30.550  3760  8882 E SLM-SRV-SLAService: 	at java.io.FileReader.<init>(FileReader.java:60)
+04-13 17:06:30.550  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService.readLine(SLAService.java:1237)
+04-13 17:06:30.550  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService.isPerformanceMode(SLAService.java:1262)
+04-13 17:06:30.550  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService.checktemp(SLAService.java:1294)
+04-13 17:06:30.550  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService.access$2500(SLAService.java:125)
+04-13 17:06:30.550  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService$ThermalStateListener.onEvent(SLAService.java:1226)
+04-13 17:06:30.550  3760  8882 E SLM-SRV-SLAService: 	at android.os.FileObserver$ObserverThread.onEvent(FileObserver.java:166)
+04-13 17:06:30.550  3760  8882 E SLM-SRV-SLAService: 	at android.os.FileObserver$ObserverThread.observe(Native Method)
+04-13 17:06:30.550  3760  8882 E SLM-SRV-SLAService: 	at android.os.FileObserver$ObserverThread.run(FileObserver.java:116)
+04-13 17:06:30.550  3760  8882 E SLM-SRV-SLAService: Caused by: android.system.ErrnoException: open failed: ENOENT (No such file or directory)
+04-13 17:06:30.550  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.Linux.open(Native Method)
+04-13 17:06:30.550  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.ForwardingOs.open(ForwardingOs.java:574)
+04-13 17:06:30.550  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.BlockGuardOs.open(BlockGuardOs.java:274)
+04-13 17:06:30.550  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.ForwardingOs.open(ForwardingOs.java:574)
+04-13 17:06:30.550  3760  8882 E SLM-SRV-SLAService: 	at android.app.ActivityThread$AndroidOs.open(ActivityThread.java:8108)
+04-13 17:06:30.550  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.IoBridge.open(IoBridge.java:560)
+04-13 17:06:30.550  3760  8882 E SLM-SRV-SLAService: 	... 11 more
+04-13 17:06:31.129  1556  1722 E AlarmManager: Attempt to decrement existing alarm count 0 by 1 for uid 1000
+04-13 17:06:31.342   617  2362 E android.system.suspend@1.0-service: Error opening kernel wakelock stats for: wakeup118 (../../devices/platform/maxim_ds28e16/power_supply/batt_verify/wakeup118): Permission denied
+04-13 17:06:31.357   617  2362 E android.system.suspend@1.0-service: Error opening kernel wakelock stats for: wakeup126 (../../devices/platform/1101a000.i2c7/i2c-7/7-0051/power_supply/ln8000/wakeup126): Permission denied
+04-13 17:06:31.378   617  2362 E android.system.suspend@1.0-service: Error opening kernel wakelock stats for: wakeup162 (../../devices/platform/1100a000.spi0/spi_master/spi0/spi0.0/wakeup/wakeup162): Permission denied
+04-13 17:06:31.382   617  2362 E android.system.suspend@1.0-service: Error opening kernel wakelock stats for: wakeup124 (../../devices/platform/battery/power_supply/bms/wakeup124): Permission denied
+04-13 17:06:31.390   617  2362 E android.system.suspend@1.0-service: Error opening kernel wakelock stats for: wakeup114 (../../devices/platform/1000d000.pwrap/1000d000.pwrap:mt6359-pmic/mt6359-rtc/wakeup/wakeup114): Permission denied
+04-13 17:06:31.414   617  2362 E android.system.suspend@1.0-service: Error opening kernel wakelock stats for: wakeup99 (../../devices/platform/15028000.dpe/wakeup/wakeup99): Permission denied
+04-13 17:06:31.425   617  2362 E android.system.suspend@1.0-service: Error opening kernel wakelock stats for: wakeup100 (../../devices/platform/1502e000.mfb/wakeup/wakeup100): Permission denied
+04-13 17:06:31.425   617  2362 E android.system.suspend@1.0-service: Error opening kernel wakelock stats for: wakeup97 (../../devices/platform/1502a000.wpe_a/wakeup/wakeup97): Permission denied
+04-13 17:06:31.426   617  2362 E android.system.suspend@1.0-service: Error opening kernel wakelock stats for: wakeup129 (../../devices/platform/1000d000.pwrap/1000d000.pwrap:mt6359-pmic/mt635x-auxadc/wakeup/wakeup129): Permission denied
+04-13 17:06:31.429   617  2362 E android.system.suspend@1.0-service: Error opening kernel wakelock stats for: wakeup147 (../../devices/platform/mt_charger/power_supply/main/wakeup147): Permission denied
+04-13 17:06:31.429   617  2362 E android.system.suspend@1.0-service: Error opening kernel wakelock stats for: wakeup5 (../../devices/platform/10600000.adsp_core0/wakeup/wakeup5): Permission denied
+04-13 17:06:31.434   617  2362 E android.system.suspend@1.0-service: Error opening kernel wakelock stats for: wakeup127 (../../devices/platform/1101a000.i2c7/i2c-7/7-0051/wakeup/wakeup127): Permission denied
+04-13 17:06:31.437   617  2362 E android.system.suspend@1.0-service: Error opening kernel wakelock stats for: wakeup117 (../../devices/platform/11016000.i2c5/i2c-5/5-0034/mt6360_pmu_chg.2.auto/wakeup/wakeup117): Permission denied
+04-13 17:06:31.446   617  2362 E android.system.suspend@1.0-service: Error opening kernel wakelock stats for: wakeup1 (../../devices/platform/10228000.gce/wakeup/wakeup1): Permission denied
+04-13 17:06:31.460   617  2362 E android.system.suspend@1.0-service: Error opening kernel wakelock stats for: wakeup98 (../../devices/platform/1502a000.wpe_a/wakeup/wakeup98): Permission denied
+04-13 17:06:31.465   617  2362 E android.system.suspend@1.0-service: Error opening kernel wakelock stats for: wakeup96 (../../devices/platform/1a000000.camsysisp/wakeup/wakeup96): Permission denied
+04-13 17:06:31.470  1556  1611 E FileUtils: err open mi_exception_log errno=2
+04-13 17:06:31.470  1556  1611 E FileUtils: err write to mi_exception_log
+04-13 17:06:31.535 11557 13619 E FileUtils: err open mi_exception_log errno=2
+04-13 17:06:31.535 11557 13619 E FileUtils: err write to mi_exception_log
+04-13 17:06:32.589  4422  5788 E FileUtils: err open mi_exception_log errno=2
+04-13 17:06:32.589  4422  5788 E FileUtils: err write to mi_exception_log
+04-13 17:06:33.098  1556  1583 E FileUtils: err open mi_exception_log errno=2
+04-13 17:06:33.098  1556  1583 E FileUtils: err write to mi_exception_log
+04-13 17:06:36.766 13639 13639 E ClobalConstants: getMusicPid musicPid=-1
+04-13 17:06:36.784 13639 13639 E AppVersionCheckHelper: PassportLog@A2^6C[Y2hlY2tBcHBWZXJzaW9uPj4+Y2FjaGVBcHBWZXJzaW9uPTU0OTIgIGN1ckFwcFZlcnNpb249NTQ5Mg==]
+04-13 17:06:36.784 13639 13639 E XiaomiAccountManager: PassportLog@A2^6C[c2V0dXAgdHJ1ZQ==]
+04-13 17:06:36.790 13639 13639 E XiaomiAccountManager: PassportLog@A2^6C[Y2FsbGVyIHNpZ25hdHVyZSA9IEFwcFNpZ25hdHVyZUhhc2h7c2hhMT0nN0I2REM3MDc5QzM0NzM5Q0U4MTE1OTcxOUZCNUVCNjFEMkEwMzIyNScsIG1kNT0nNzAxNDc4QTFFM0I0QjdFMzk3OEVBNjk0Njk0MTBGMTMnfQ==]
+04-13 17:06:36.790 13639 13639 E XiaomiAccountManager: PassportLog@A2^6C[c3lzIGFjY291bnQgc2lnbmF0dXJlID0gQXBwU2lnbmF0dXJlSGFzaHtzaGExPSc3QjZEQzcwNzlDMzQ3MzlDRTgxMTU5NzE5RkI1RUI2MUQyQTAzMjI1JywgbWQ1PSc3MDE0NzhBMUUzQjRCN0UzOTc4RUE2OTQ2OTQxMEYxMyd9]
+04-13 17:06:36.791 13639 13639 E XiaomiAccountManager: PassportLog@A2^6C[aGFzIHN5c3RlbSBhY2NvdW50IGFwcCBhbmQgY3VycmVudCBjb20ubWl1aS5wbGF5ZXIgaGFzIHNhbWUgc2lnbmF0dXJl]
+04-13 17:06:36.821 13639 13680 E brand   : xiaomi
+04-13 17:06:36.829 13639 13680 E DeviceUtils: static init: ComputilityLevel Load Class Exception:java.lang.ClassNotFoundException: Didn't find class "com.miui.performance.ComputilityLevelUtils" on path: DexPathList[[zip file "/system/framework/MiuiBooster.jar"],nativeLibraryDirectories=[/system/lib64, /system_ext/lib64]]
+04-13 17:06:36.829 13639 13680 E DeviceUtils: static init(): Load MiuiMiddle Class Exception:java.lang.NoSuchMethodException: com.miui.performance.DeviceLevelUtils.getMiuiMiddleVersion []
+04-13 17:06:36.873 13639 13639 E brand   : xiaomi
+04-13 17:06:36.885 13639 13639 E FileUtils: err open mi_exception_log errno=2
+04-13 17:06:36.885 13639 13639 E FileUtils: err write to mi_exception_log
+04-13 17:06:36.941 13639 13678 E FileUtils: err open mi_exception_log errno=2
+04-13 17:06:36.941 13639 13678 E FileUtils: err write to mi_exception_log
+04-13 17:06:37.044 15648 21566 E FileUtils: err open mi_exception_log errno=2
+04-13 17:06:37.044 15648 21566 E FileUtils: err write to mi_exception_log
+04-13 17:06:37.137 15648 21566 E FileUtils: err open mi_exception_log errno=2
+04-13 17:06:37.137 15648 21566 E FileUtils: err write to mi_exception_log
+04-13 17:06:37.208 13639 13775 E com.miui.player: No package ID 6a found for ID 0x6a0b0013.
+04-13 17:06:37.360   879   937 E HWComposer: getSupportedContentTypes: getSupportedContentTypes failed for display 0: Unsupported (8)
+04-13 17:06:37.383  2166  2166 E miui_face: start face unlock fail, mKeyguardShowing =false;isDeviceInteractive =false;isSwitchingUser =false;isKeyguardGoingAway =false
+04-13 17:06:37.389  1217  1419 E fpc_tac : fpc_irq_wait {{16,10,0},{14,1,1}}
+04-13 17:06:37.389  1217  1419 E fpc_tac : fpc_irq_wait error -7
+04-13 17:06:37.416  1556  1634 E FileUtils: err open mi_exception_log errno=2
+04-13 17:06:37.416  1556  1634 E FileUtils: err write to mi_exception_log
+04-13 17:06:37.537   811   811 E android.hardware.lights-service.mediatek: Lights id=0, size=6
+04-13 17:06:37.537   811   811 E android.hardware.lights-service.mediatek: Lights color=0x0, FlashMode=0,0,0
+04-13 17:06:37.551   804   804 E SensorManager: Correct handle(4) mindelay: 200000000 old: 1000000
+04-13 17:06:37.588  1556  1634 E FileUtils: err open mi_exception_log errno=2
+04-13 17:06:37.588  1556  1634 E FileUtils: err write to mi_exception_log
+04-13 17:06:37.609  9675  3332 E bt_stack: [ERROR:com_android_bluetooth_btservice_ActivityAttribution.cpp(172)] Failed to get ActivityAttribution Interface
+04-13 17:06:37.616  1556  1749 E MiuiActivityController: MiuiLog-ActivityObserver: There was something wrong : null
+04-13 17:06:37.619 25361 25361 E FileUtils: err write to mi_exception_log
+04-13 17:06:37.620  9675  3332 E bt_stack: [ERROR:com_android_bluetooth_btservice_ActivityAttribution.cpp(172)] Failed to get ActivityAttribution Interface
+04-13 17:06:37.621 19154 19154 E FileUtils: err write to mi_exception_log
+04-13 17:06:37.630  9675  9743 E BtGatt.ScanManager: unknown package tracked
+04-13 17:06:37.674  1556  1749 E MiuiActivityController: MiuiLog-ActivityObserver: There was something wrong : null
+04-13 17:06:37.687  1556  1749 E MiuiActivityController: MiuiLog-ActivityObserver: There was something wrong : null
+04-13 17:06:37.703 19154 27407 E ActivityManagerWrapper: get all recent tasks force including 27129
+04-13 17:06:37.719 19154 27407 E ActivityManagerWrapper: getRecentTasks: size=34
+04-13 17:06:37.719 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27438   userId=0   baseIntent=Intent { act=null flag=268435456 cmp=ComponentInfo{com.example.timedrop/com.example.timedrop.MainActivity} }
+04-13 17:06:37.719 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27433   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.google.android.dialer/com.google.android.dialer.extensions.GoogleDialtactsActivity} }
+04-13 17:06:37.719 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27366   userId=0   baseIntent=Intent { act=null flag=268533760 cmp=ComponentInfo{com.instagram.android/com.instagram.mainactivity.InstagramMainActivity} }
+04-13 17:06:37.719 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27430   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.blockchainvault/com.pinetwork.MainActivity} }
+04-13 17:06:37.719 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27226   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.facebook.orca/com.facebook.orca.auth.StartScreenActivity} }
+04-13 17:06:37.719 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27206   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.zhiliaoapp.musically/com.ss.android.ugc.aweme.splash.SplashActivity} }
+04-13 17:06:37.719 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27355   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.facebook.katana/com.facebook.katana.LoginActivity} }
+04-13 17:06:37.719 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27269   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.whatsapp/com.whatsapp.Main} }
+04-13 17:06:37.719 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27357   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.microsoft.teams/com.microsoft.skype.teams.Launcher} }
+04-13 17:06:37.719 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27384   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.wssc.simpleclock/com.wssc.simpleclock.ui.activity.MainActivity} }
+04-13 17:06:37.719 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27304   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.spotify.music/com.spotify.music.MainActivity} }
+04-13 17:06:37.719 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27387   userId=0   baseIntent=Intent { act=android.settings.SETTINGS flag=335544320 cmp=ComponentInfo{com.android.settings/com.android.settings.MiuiSettings} }
+04-13 17:06:37.719 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27396   userId=0   baseIntent=Intent { act=null flag=335544320 cmp=ComponentInfo{com.fin.plan/com.fin.plan.presentation.MainActivity} }
+04-13 17:06:37.719 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27392   userId=0   baseIntent=Intent { act=null flag=335544320 cmp=ComponentInfo{com.android.updater/com.android.updater.MainActivity} }
+04-13 17:06:37.719 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27389   userId=0   baseIntent=Intent { act=com.google.android.finsky.phoenix.ACQUIRE flag=268435456 cmp=ComponentInfo{com.android.vending/com.google.android.finsky.billing.acquire.SheetUiBuilderHostActivity} }
+04-13 17:06:37.719 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27383   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.anthropic.claude/com.anthropic.claude.mainactivity.MainActivity} }
+04-13 17:06:37.719 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27375   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{app.gainaura.habits/app.gainaura.habits.MainActivity} }
+04-13 17:06:37.720 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27378   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.microsoft.office.outlook/com.microsoft.office.outlook.MainActivity} }
+04-13 17:06:37.720 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27368   userId=0   baseIntent=Intent { act=android.intent.action.VIEW flag=268435456 cmp=ComponentInfo{com.linkedin.android/com.linkedin.android.urls.DeeplinkActivity} }
+04-13 17:06:37.720 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27367   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.google.android.apps.maps/com.google.android.maps.MapsActivity} }
+04-13 17:06:37.720 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27104   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.openai.chatgpt/com.openai.chatgpt.MainActivity} }
+04-13 17:06:37.720 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27361   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.mercadopago.wallet/com.mercadopago.wallet.SplashActivityAliasDefault} }
+04-13 17:06:37.720 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27351   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.reddit.frontpage/launcher.default} }
+04-13 17:06:37.720 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27353   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{org.telegram.messenger/org.telegram.messenger.DefaultIcon} }
+04-13 17:06:37.720 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27346   userId=0   baseIntent=Intent { act=null flag=335609856 cmp=ComponentInfo{com.amazon.mShop.android.shopping/com.amazon.mShop.httpUrlDeepLink.PublicUrlActivity} }
+04-13 17:06:37.720 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27334   userId=0   baseIntent=Intent { act=android.intent.action.VIEW flag=318767107 cmp=ComponentInfo{mega.privacy.android.app/mega.privacy.android.app.presentation.pdfviewer.PdfViewerActivity} }
+04-13 17:06:37.720 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27328   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.suifitime.suifileexplorer.root.pro/com.suifitime.suifileexplorer.root.DocumentsActivity} }
+04-13 17:06:37.720 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27325   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.google.android.apps.translate/com.google.android.apps.translate.TranslateActivity} }
+04-13 17:06:37.720 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27268   userId=0   baseIntent=Intent { act=null flag=805306368 cmp=ComponentInfo{com.vizta.wefly/com.moba.unityplugin.MobaGameUnityActivity} }
+04-13 17:06:37.720 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27322   userId=0   baseIntent=Intent { act=null flag=872415232 cmp=ComponentInfo{com.supercell.clashofclans/com.supercell.titan.GameApp} }
+04-13 17:06:37.720 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27241   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.tippingcanoe.promodescuentos/com.pepper.apps.android.presentation.MainActivityDarkIcon} }
+04-13 17:06:37.720 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27320   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.android.camera/com.android.camera.Camera} }
+04-13 17:06:37.720 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27318   userId=0   baseIntent=Intent { act=null flag=268435456 cmp=ComponentInfo{com.miui.android.fashiongallery/com.miui.cw.feature.ui.home.HomeActivity} }
+04-13 17:06:37.720 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27230   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=268435456 cmp=ComponentInfo{com.duolingo/com.duolingo.splash.LaunchActivity} }
+04-13 17:06:37.752 19154 27407 E FileUtils: err open mi_exception_log errno=2
+04-13 17:06:37.752 19154 27407 E FileUtils: err write to mi_exception_log
+04-13 17:06:37.755 19154 27407 E ActivityManagerWrapper: get all recent tasks force including 27129
+04-13 17:06:37.770 19154 27407 E ActivityManagerWrapper: getRecentTasks: size=34
+04-13 17:06:37.770 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27438   userId=0   baseIntent=Intent { act=null flag=268435456 cmp=ComponentInfo{com.example.timedrop/com.example.timedrop.MainActivity} }
+04-13 17:06:37.770 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27433   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.google.android.dialer/com.google.android.dialer.extensions.GoogleDialtactsActivity} }
+04-13 17:06:37.770 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27366   userId=0   baseIntent=Intent { act=null flag=268533760 cmp=ComponentInfo{com.instagram.android/com.instagram.mainactivity.InstagramMainActivity} }
+04-13 17:06:37.770 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27430   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.blockchainvault/com.pinetwork.MainActivity} }
+04-13 17:06:37.770 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27226   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.facebook.orca/com.facebook.orca.auth.StartScreenActivity} }
+04-13 17:06:37.770 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27206   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.zhiliaoapp.musically/com.ss.android.ugc.aweme.splash.SplashActivity} }
+04-13 17:06:37.770 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27355   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.facebook.katana/com.facebook.katana.LoginActivity} }
+04-13 17:06:37.770 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27269   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.whatsapp/com.whatsapp.Main} }
+04-13 17:06:37.770 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27357   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.microsoft.teams/com.microsoft.skype.teams.Launcher} }
+04-13 17:06:37.770 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27384   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.wssc.simpleclock/com.wssc.simpleclock.ui.activity.MainActivity} }
+04-13 17:06:37.770 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27304   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.spotify.music/com.spotify.music.MainActivity} }
+04-13 17:06:37.770 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27387   userId=0   baseIntent=Intent { act=android.settings.SETTINGS flag=335544320 cmp=ComponentInfo{com.android.settings/com.android.settings.MiuiSettings} }
+04-13 17:06:37.770 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27396   userId=0   baseIntent=Intent { act=null flag=335544320 cmp=ComponentInfo{com.fin.plan/com.fin.plan.presentation.MainActivity} }
+04-13 17:06:37.770 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27392   userId=0   baseIntent=Intent { act=null flag=335544320 cmp=ComponentInfo{com.android.updater/com.android.updater.MainActivity} }
+04-13 17:06:37.770 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27389   userId=0   baseIntent=Intent { act=com.google.android.finsky.phoenix.ACQUIRE flag=268435456 cmp=ComponentInfo{com.android.vending/com.google.android.finsky.billing.acquire.SheetUiBuilderHostActivity} }
+04-13 17:06:37.770 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27383   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.anthropic.claude/com.anthropic.claude.mainactivity.MainActivity} }
+04-13 17:06:37.770 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27375   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{app.gainaura.habits/app.gainaura.habits.MainActivity} }
+04-13 17:06:37.770 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27378   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.microsoft.office.outlook/com.microsoft.office.outlook.MainActivity} }
+04-13 17:06:37.770 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27368   userId=0   baseIntent=Intent { act=android.intent.action.VIEW flag=268435456 cmp=ComponentInfo{com.linkedin.android/com.linkedin.android.urls.DeeplinkActivity} }
+04-13 17:06:37.770 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27367   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.google.android.apps.maps/com.google.android.maps.MapsActivity} }
+04-13 17:06:37.770 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27104   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.openai.chatgpt/com.openai.chatgpt.MainActivity} }
+04-13 17:06:37.770 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27361   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.mercadopago.wallet/com.mercadopago.wallet.SplashActivityAliasDefault} }
+04-13 17:06:37.770 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27351   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.reddit.frontpage/launcher.default} }
+04-13 17:06:37.770 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27353   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{org.telegram.messenger/org.telegram.messenger.DefaultIcon} }
+04-13 17:06:37.770 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27346   userId=0   baseIntent=Intent { act=null flag=335609856 cmp=ComponentInfo{com.amazon.mShop.android.shopping/com.amazon.mShop.httpUrlDeepLink.PublicUrlActivity} }
+04-13 17:06:37.770 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27334   userId=0   baseIntent=Intent { act=android.intent.action.VIEW flag=318767107 cmp=ComponentInfo{mega.privacy.android.app/mega.privacy.android.app.presentation.pdfviewer.PdfViewerActivity} }
+04-13 17:06:37.770 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27328   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.suifitime.suifileexplorer.root.pro/com.suifitime.suifileexplorer.root.DocumentsActivity} }
+04-13 17:06:37.770 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27325   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.google.android.apps.translate/com.google.android.apps.translate.TranslateActivity} }
+04-13 17:06:37.770 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27268   userId=0   baseIntent=Intent { act=null flag=805306368 cmp=ComponentInfo{com.vizta.wefly/com.moba.unityplugin.MobaGameUnityActivity} }
+04-13 17:06:37.770 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27322   userId=0   baseIntent=Intent { act=null flag=872415232 cmp=ComponentInfo{com.supercell.clashofclans/com.supercell.titan.GameApp} }
+04-13 17:06:37.770 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27241   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.tippingcanoe.promodescuentos/com.pepper.apps.android.presentation.MainActivityDarkIcon} }
+04-13 17:06:37.770 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27320   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=270532608 cmp=ComponentInfo{com.android.camera/com.android.camera.Camera} }
+04-13 17:06:37.770 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27318   userId=0   baseIntent=Intent { act=null flag=268435456 cmp=ComponentInfo{com.miui.android.fashiongallery/com.miui.cw.feature.ui.home.HomeActivity} }
+04-13 17:06:37.770 19154 27407 E ActivityManagerWrapper: getRecentTasks: mainTaskId=27230   userId=0   baseIntent=Intent { act=android.intent.action.MAIN flag=268435456 cmp=ComponentInfo{com.duolingo/com.duolingo.splash.LaunchActivity} }
+04-13 17:06:37.831   812   841 E mtkpower@impl: [setMode] unknown type
+04-13 17:06:37.832   804   804 E SensorManager: Correct handle(4) mindelay: 200000000 old: 1000000
+04-13 17:06:37.924  2675  2675 E FileUtils: err write to mi_exception_log
+04-13 17:06:37.939  2675  2675 E DozeMachine: request: current=UNINITIALIZED req=INITIALIZED
+04-13 17:06:37.985  2166  2166 E LockScreenMagazinePreView: getFullScreenLayout()  mRemoteFullScreenView:null
+04-13 17:06:37.985  2166  2166 E LockScreenMagazinePreView: getFullScreenLayout()  mRemoteFullScreenView:null
+04-13 17:06:37.990  2166  2166 E miui_face: start face unlock fail, mKeyguardShowing =true;isDeviceInteractive =false;isSwitchingUser =false;isKeyguardGoingAway =false
+04-13 17:06:37.992  2166  2166 E miui_face: start face unlock fail, mKeyguardShowing =true;isDeviceInteractive =false;isSwitchingUser =false;isKeyguardGoingAway =false
+04-13 17:06:37.994  2166  2166 E FileUtils: err write to mi_exception_log
+04-13 17:06:37.994  2166  2166 E LockScreenMagazinePreView: getFullScreenLayout()  mRemoteFullScreenView:null
+04-13 17:06:37.995  2166  2166 E LockScreenMagazinePreView: getFullScreenLayout()  mRemoteFullScreenView:null
+04-13 17:06:38.002   618 13791 E keystore2: keystore2::gc: Error trying to delete blob entry. In process_one_key: Trying to invalidate key.
+04-13 17:06:38.002   618 13791 E keystore2: 
+04-13 17:06:38.002   618 13791 E keystore2: Caused by:
+04-13 17:06:38.002   618 13791 E keystore2:     0: In invalidate key closure: Trying to invalidate key blob.
+04-13 17:06:38.002   618 13791 E keystore2:     1: Error::Km(ErrorCode(-100))
+04-13 17:06:38.012  2166  2166 E miui_face: start face unlock fail, mKeyguardShowing =true;isDeviceInteractive =false;isSwitchingUser =false;isKeyguardGoingAway =false
+04-13 17:06:38.020  2166  2166 E LockScreenMagazinePreView: getFullScreenLayout()  mRemoteFullScreenView:null
+04-13 17:06:38.020  2166  2166 E LockScreenMagazinePreView: getFullScreenLayout()  mRemoteFullScreenView:null
+04-13 17:06:38.092  2166  2166 E FileUtils: err write to mi_exception_log
+04-13 17:06:38.093  2166  2166 E miui_face: start face unlock fail, mKeyguardShowing =true;isDeviceInteractive =false;isSwitchingUser =false;isKeyguardGoingAway =false
+04-13 17:06:38.125  2166  2166 E FileUtils: err write to mi_exception_log
+04-13 17:06:38.142  2675  2675 E com.miui.aod: Invalid ID 0x00000000.
+04-13 17:06:38.147  2675  2675 E AODView : makeNormalPanel: {"attribute_flag":3,"bg_cluster":[-1],"bg":"scope_f","is_change_color_alongtime":false,"label":"label_single_motion","name":"scope"}
+04-13 17:06:38.151  2166  2166 E FileUtils: err write to mi_exception_log
+04-13 17:06:38.188  9675  3332 E bt_stack: [ERROR:com_android_bluetooth_btservice_ActivityAttribution.cpp(172)] Failed to get ActivityAttribution Interface
+04-13 17:06:38.206  2675  2675 E DozeService: setDozeScreenState: 1 mPendingBrightness 0
+04-13 17:06:38.224  2675  2675 E FileUtils: err write to mi_exception_log
+04-13 17:06:38.279  9675  3332 E bt_stack: [ERROR:com_android_bluetooth_btservice_ActivityAttribution.cpp(172)] Failed to get ActivityAttribution Interface
+04-13 17:06:38.294  2675  2675 E FileUtils: err write to mi_exception_log
+04-13 17:06:38.295  2675  2675 E DozeService: setDozeScreenState: 3 mPendingBrightness 0
+04-13 17:06:38.309  3724  3724 E libnfc_nci: [ERROR:StNativeNfcTag.cpp(1225)] nativeNfcTag_doDisconnect: tag already deactivated
+04-13 17:06:38.311  4422  4422 E VideoBoxServiceManager: removeView error
+04-13 17:06:38.311  4422  4422 E VideoBoxServiceManager: android.os.DeadObjectException
+04-13 17:06:38.311  4422  4422 E VideoBoxServiceManager: 	at android.os.BinderProxy.transactNative(Native Method)
+04-13 17:06:38.311  4422  4422 E VideoBoxServiceManager: 	at android.os.BinderProxy.transact(BinderProxy.java:646)
+04-13 17:06:38.311  4422  4422 E VideoBoxServiceManager: 	at com.miui.gamebooster.service.IGameBoosterWindow$Stub$a.i3(Unknown Source:13)
+04-13 17:06:38.311  4422  4422 E VideoBoxServiceManager: 	at l6.q.g(Unknown Source:4)
+04-13 17:06:38.311  4422  4422 E VideoBoxServiceManager: 	at com.miui.gamebooster.service.VideoToolBoxService$d.onReceive(Unknown Source:66)
+04-13 17:06:38.311  4422  4422 E VideoBoxServiceManager: 	at android.app.LoadedApk$ReceiverDispatcher$Args.lambda$getRunnable$0$android-app-LoadedApk$ReceiverDispatcher$Args(LoadedApk.java:1838)
+04-13 17:06:38.311  4422  4422 E VideoBoxServiceManager: 	at android.app.LoadedApk$ReceiverDispatcher$Args$$ExternalSyntheticLambda0.run(Unknown Source:2)
+04-13 17:06:38.311  4422  4422 E VideoBoxServiceManager: 	at android.os.Handler.handleCallback(Handler.java:942)
+04-13 17:06:38.311  4422  4422 E VideoBoxServiceManager: 	at android.os.Handler.dispatchMessage(Handler.java:99)
+04-13 17:06:38.311  4422  4422 E VideoBoxServiceManager: 	at android.os.Looper.loopOnce(Looper.java:211)
+04-13 17:06:38.311  4422  4422 E VideoBoxServiceManager: 	at android.os.Looper.loop(Looper.java:300)
+04-13 17:06:38.311  4422  4422 E VideoBoxServiceManager: 	at android.app.ActivityThread.main(ActivityThread.java:8232)
+04-13 17:06:38.311  4422  4422 E VideoBoxServiceManager: 	at java.lang.reflect.Method.invoke(Native Method)
+04-13 17:06:38.311  4422  4422 E VideoBoxServiceManager: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:580)
+04-13 17:06:38.311  4422  4422 E VideoBoxServiceManager: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1028)
+04-13 17:06:38.332   812   841 E mtkpower@impl: [setMode] unknown type
+04-13 17:06:38.354  6257  6618 E ThermalInfoUtils: getCurrentCapacity Exceptionjava.io.FileNotFoundException: /sys/class/power_supply/battery/charge_counter: open failed: EACCES (Permission denied)
+04-13 17:06:38.369  2675  2675 E FileUtils: err write to mi_exception_log
+04-13 17:06:38.391 23145 23145 E FileUtils: err write to mi_exception_log
+04-13 17:06:38.410  9675  9743 E FileUtils: err open mi_exception_log errno=2
+04-13 17:06:38.410  9675  9743 E FileUtils: err write to mi_exception_log
+04-13 17:06:38.503  9675  3332 E bt_stack: [ERROR:com_android_bluetooth_btservice_ActivityAttribution.cpp(172)] Failed to get ActivityAttribution Interface
+04-13 17:06:38.751  1556  1821 E FileUtils: err open mi_exception_log errno=2
+04-13 17:06:38.751  1556  1821 E FileUtils: err write to mi_exception_log
+04-13 17:06:38.793 28797 28797 E FileUtils: err write to mi_exception_log
+04-13 17:06:38.800  2675  2675 E FileUtils: err write to mi_exception_log
+04-13 17:06:40.148  2675  2720 E DozeHost: NativeHeapAllocatedSize: 30164120
+04-13 17:06:40.551  3760  8882 E SLM-SRV-SLAService: readLine:
+04-13 17:06:40.551  3760  8882 E SLM-SRV-SLAService: java.io.FileNotFoundException: /sys/class/thermal/thermal_message/balance_mode: open failed: ENOENT (No such file or directory)
+04-13 17:06:40.551  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.IoBridge.open(IoBridge.java:574)
+04-13 17:06:40.551  3760  8882 E SLM-SRV-SLAService: 	at java.io.FileInputStream.<init>(FileInputStream.java:179)
+04-13 17:06:40.551  3760  8882 E SLM-SRV-SLAService: 	at java.io.FileInputStream.<init>(FileInputStream.java:133)
+04-13 17:06:40.551  3760  8882 E SLM-SRV-SLAService: 	at java.io.FileReader.<init>(FileReader.java:60)
+04-13 17:06:40.551  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService.readLine(SLAService.java:1237)
+04-13 17:06:40.551  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService.isPerformanceMode(SLAService.java:1262)
+04-13 17:06:40.551  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService.checktemp(SLAService.java:1293)
+04-13 17:06:40.551  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService.access$2500(SLAService.java:125)
+04-13 17:06:40.551  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService$ThermalStateListener.onEvent(SLAService.java:1226)
+04-13 17:06:40.551  3760  8882 E SLM-SRV-SLAService: 	at android.os.FileObserver$ObserverThread.onEvent(FileObserver.java:166)
+04-13 17:06:40.551  3760  8882 E SLM-SRV-SLAService: 	at android.os.FileObserver$ObserverThread.observe(Native Method)
+04-13 17:06:40.551  3760  8882 E SLM-SRV-SLAService: 	at android.os.FileObserver$ObserverThread.run(FileObserver.java:116)
+04-13 17:06:40.551  3760  8882 E SLM-SRV-SLAService: Caused by: android.system.ErrnoException: open failed: ENOENT (No such file or directory)
+04-13 17:06:40.551  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.Linux.open(Native Method)
+04-13 17:06:40.551  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.ForwardingOs.open(ForwardingOs.java:574)
+04-13 17:06:40.551  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.BlockGuardOs.open(BlockGuardOs.java:274)
+04-13 17:06:40.551  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.ForwardingOs.open(ForwardingOs.java:574)
+04-13 17:06:40.551  3760  8882 E SLM-SRV-SLAService: 	at android.app.ActivityThread$AndroidOs.open(ActivityThread.java:8108)
+04-13 17:06:40.551  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.IoBridge.open(IoBridge.java:560)
+04-13 17:06:40.551  3760  8882 E SLM-SRV-SLAService: 	... 11 more
+04-13 17:06:40.552  3760  8882 E SLM-SRV-SLAService: readLine:
+04-13 17:06:40.552  3760  8882 E SLM-SRV-SLAService: java.io.FileNotFoundException: /sys/class/thermal/thermal_message/balance_mode: open failed: ENOENT (No such file or directory)
+04-13 17:06:40.552  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.IoBridge.open(IoBridge.java:574)
+04-13 17:06:40.552  3760  8882 E SLM-SRV-SLAService: 	at java.io.FileInputStream.<init>(FileInputStream.java:179)
+04-13 17:06:40.552  3760  8882 E SLM-SRV-SLAService: 	at java.io.FileInputStream.<init>(FileInputStream.java:133)
+04-13 17:06:40.552  3760  8882 E SLM-SRV-SLAService: 	at java.io.FileReader.<init>(FileReader.java:60)
+04-13 17:06:40.552  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService.readLine(SLAService.java:1237)
+04-13 17:06:40.552  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService.isPerformanceMode(SLAService.java:1262)
+04-13 17:06:40.552  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService.checktemp(SLAService.java:1294)
+04-13 17:06:40.552  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService.access$2500(SLAService.java:125)
+04-13 17:06:40.552  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService$ThermalStateListener.onEvent(SLAService.java:1226)
+04-13 17:06:40.552  3760  8882 E SLM-SRV-SLAService: 	at android.os.FileObserver$ObserverThread.onEvent(FileObserver.java:166)
+04-13 17:06:40.552  3760  8882 E SLM-SRV-SLAService: 	at android.os.FileObserver$ObserverThread.observe(Native Method)
+04-13 17:06:40.552  3760  8882 E SLM-SRV-SLAService: 	at android.os.FileObserver$ObserverThread.run(FileObserver.java:116)
+04-13 17:06:40.552  3760  8882 E SLM-SRV-SLAService: Caused by: android.system.ErrnoException: open failed: ENOENT (No such file or directory)
+04-13 17:06:40.552  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.Linux.open(Native Method)
+04-13 17:06:40.552  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.ForwardingOs.open(ForwardingOs.java:574)
+04-13 17:06:40.552  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.BlockGuardOs.open(BlockGuardOs.java:274)
+04-13 17:06:40.552  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.ForwardingOs.open(ForwardingOs.java:574)
+04-13 17:06:40.552  3760  8882 E SLM-SRV-SLAService: 	at android.app.ActivityThread$AndroidOs.open(ActivityThread.java:8108)
+04-13 17:06:40.552  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.IoBridge.open(IoBridge.java:560)
+04-13 17:06:40.552  3760  8882 E SLM-SRV-SLAService: 	... 11 more
+04-13 17:06:41.084 12236 13281 E com.whatsapp: hiddenapi: Accessing hidden field Landroid/app/Notification;->extraNotification:Landroid/app/MiuiNotification; (runtime_flags=0, domain=platform, api=blocked) from LX/7MO; (domain=app, TargetSdkVersion=36) using reflection: denied
+04-13 17:06:41.139 12236 13281 E com.whatsapp: hiddenapi: Accessing hidden field Landroid/app/Notification;->extraNotification:Landroid/app/MiuiNotification; (runtime_flags=0, domain=platform, api=blocked) from LX/7MO; (domain=app, TargetSdkVersion=36) using reflection: denied
+04-13 17:06:41.158 12236 13281 E FileUtils: err open mi_exception_log errno=2
+04-13 17:06:41.158 12236 13281 E FileUtils: err write to mi_exception_log
+04-13 17:06:41.174 12236 13285 E com.whatsapp: hiddenapi: Accessing hidden method Landroid/app/MiuiNotification;-><init>()V (runtime_flags=0, domain=platform, api=blocked) from LX/7MO; (domain=app, TargetSdkVersion=36) using reflection: denied
+04-13 17:06:41.411 22770 22770 E FileUtils: err write to mi_exception_log
+04-13 17:06:41.517  2166  2166 E FileUtils: err write to mi_exception_log
+04-13 17:06:41.589 12236 12379 E msys    : E[N WCIHTTPImplNetworkSession]WCIHTTPTaskImplCreateRegular(556)=>[I] http/task/regular/create/start
+04-13 17:06:41.590 12236 12379 E msys    : E[N WCIHTTPImplNetworkSession]WCIHTTPTaskImplCreateRegular(591)=>[I] http/task/regular/create/execute
+04-13 17:06:41.590 12236 12379 E msys    : E[N WCIHTTPImplNetworkSession]WCIHTTPTaskImplCreateRegular(614)=>[I] http/task/regular/create/success
+04-13 17:06:44.943 12236 13281 E com.whatsapp: hiddenapi: Accessing hidden field Landroid/app/Notification;->extraNotification:Landroid/app/MiuiNotification; (runtime_flags=0, domain=platform, api=blocked) from LX/7MO; (domain=app, TargetSdkVersion=36) using reflection: denied
+04-13 17:06:45.014 12236 13281 E com.whatsapp: hiddenapi: Accessing hidden field Landroid/app/Notification;->extraNotification:Landroid/app/MiuiNotification; (runtime_flags=0, domain=platform, api=blocked) from LX/7MO; (domain=app, TargetSdkVersion=36) using reflection: denied
+04-13 17:06:45.036 12236 13281 E com.whatsapp: hiddenapi: Accessing hidden field Landroid/app/Notification;->extraNotification:Landroid/app/MiuiNotification; (runtime_flags=0, domain=platform, api=blocked) from LX/7MO; (domain=app, TargetSdkVersion=36) using reflection: denied
+04-13 17:06:45.045 12236 13281 E FileUtils: err open mi_exception_log errno=2
+04-13 17:06:45.045 12236 13281 E FileUtils: err write to mi_exception_log
+04-13 17:06:45.146 19154 32003 E FileUtils: err open mi_exception_log errno=2
+04-13 17:06:45.146 19154 32003 E FileUtils: err write to mi_exception_log
+04-13 17:06:45.310  2166  2166 E FileUtils: err write to mi_exception_log
+04-13 17:06:45.346 19154 32003 E FileUtils: err open mi_exception_log errno=2
+04-13 17:06:45.346 19154 32003 E FileUtils: err write to mi_exception_log
+04-13 17:06:45.435  2166  2166 E FileUtils: err write to mi_exception_log
+04-13 17:06:45.608  2166  2166 E FileUtils: err write to mi_exception_log
+04-13 17:06:49.137  1062  1105 E WifiStandalone: conditional wait timedout
+04-13 17:06:50.040  2675  2675 E DozeMachine: request: current=DOZE_AOD req=DOZE
+04-13 17:06:50.048  2675  2675 E DozeService: setDozeScreenState: 1 mPendingBrightness 0
+04-13 17:06:50.101  1556  1611 E FileUtils: err open mi_exception_log errno=2
+04-13 17:06:50.102  1556  1611 E FileUtils: err write to mi_exception_log
+04-13 17:06:50.281   812   841 E mtkpower@impl: [setMode] unknown type
+04-13 17:06:50.551  3760  8882 E SLM-SRV-SLAService: readLine:
+04-13 17:06:50.551  3760  8882 E SLM-SRV-SLAService: java.io.FileNotFoundException: /sys/class/thermal/thermal_message/balance_mode: open failed: ENOENT (No such file or directory)
+04-13 17:06:50.551  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.IoBridge.open(IoBridge.java:574)
+04-13 17:06:50.551  3760  8882 E SLM-SRV-SLAService: 	at java.io.FileInputStream.<init>(FileInputStream.java:179)
+04-13 17:06:50.551  3760  8882 E SLM-SRV-SLAService: 	at java.io.FileInputStream.<init>(FileInputStream.java:133)
+04-13 17:06:50.551  3760  8882 E SLM-SRV-SLAService: 	at java.io.FileReader.<init>(FileReader.java:60)
+04-13 17:06:50.551  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService.readLine(SLAService.java:1237)
+04-13 17:06:50.551  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService.isPerformanceMode(SLAService.java:1262)
+04-13 17:06:50.551  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService.checktemp(SLAService.java:1293)
+04-13 17:06:50.551  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService.access$2500(SLAService.java:125)
+04-13 17:06:50.551  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService$ThermalStateListener.onEvent(SLAService.java:1226)
+04-13 17:06:50.551  3760  8882 E SLM-SRV-SLAService: 	at android.os.FileObserver$ObserverThread.onEvent(FileObserver.java:166)
+04-13 17:06:50.551  3760  8882 E SLM-SRV-SLAService: 	at android.os.FileObserver$ObserverThread.observe(Native Method)
+04-13 17:06:50.551  3760  8882 E SLM-SRV-SLAService: 	at android.os.FileObserver$ObserverThread.run(FileObserver.java:116)
+04-13 17:06:50.551  3760  8882 E SLM-SRV-SLAService: Caused by: android.system.ErrnoException: open failed: ENOENT (No such file or directory)
+04-13 17:06:50.551  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.Linux.open(Native Method)
+04-13 17:06:50.551  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.ForwardingOs.open(ForwardingOs.java:574)
+04-13 17:06:50.551  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.BlockGuardOs.open(BlockGuardOs.java:274)
+04-13 17:06:50.551  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.ForwardingOs.open(ForwardingOs.java:574)
+04-13 17:06:50.551  3760  8882 E SLM-SRV-SLAService: 	at android.app.ActivityThread$AndroidOs.open(ActivityThread.java:8108)
+04-13 17:06:50.551  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.IoBridge.open(IoBridge.java:560)
+04-13 17:06:50.551  3760  8882 E SLM-SRV-SLAService: 	... 11 more
+04-13 17:06:50.552  3760  8882 E SLM-SRV-SLAService: readLine:
+04-13 17:06:50.552  3760  8882 E SLM-SRV-SLAService: java.io.FileNotFoundException: /sys/class/thermal/thermal_message/balance_mode: open failed: ENOENT (No such file or directory)
+04-13 17:06:50.552  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.IoBridge.open(IoBridge.java:574)
+04-13 17:06:50.552  3760  8882 E SLM-SRV-SLAService: 	at java.io.FileInputStream.<init>(FileInputStream.java:179)
+04-13 17:06:50.552  3760  8882 E SLM-SRV-SLAService: 	at java.io.FileInputStream.<init>(FileInputStream.java:133)
+04-13 17:06:50.552  3760  8882 E SLM-SRV-SLAService: 	at java.io.FileReader.<init>(FileReader.java:60)
+04-13 17:06:50.552  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService.readLine(SLAService.java:1237)
+04-13 17:06:50.552  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService.isPerformanceMode(SLAService.java:1262)
+04-13 17:06:50.552  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService.checktemp(SLAService.java:1294)
+04-13 17:06:50.552  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService.access$2500(SLAService.java:125)
+04-13 17:06:50.552  3760  8882 E SLM-SRV-SLAService: 	at com.xiaomi.NetworkBoost.slaservice.SLAService$ThermalStateListener.onEvent(SLAService.java:1226)
+04-13 17:06:50.552  3760  8882 E SLM-SRV-SLAService: 	at android.os.FileObserver$ObserverThread.onEvent(FileObserver.java:166)
+04-13 17:06:50.552  3760  8882 E SLM-SRV-SLAService: 	at android.os.FileObserver$ObserverThread.observe(Native Method)
+04-13 17:06:50.552  3760  8882 E SLM-SRV-SLAService: 	at android.os.FileObserver$ObserverThread.run(FileObserver.java:116)
+04-13 17:06:50.552  3760  8882 E SLM-SRV-SLAService: Caused by: android.system.ErrnoException: open failed: ENOENT (No such file or directory)
+04-13 17:06:50.552  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.Linux.open(Native Method)
+04-13 17:06:50.552  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.ForwardingOs.open(ForwardingOs.java:574)
+04-13 17:06:50.552  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.BlockGuardOs.open(BlockGuardOs.java:274)
+04-13 17:06:50.552  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.ForwardingOs.open(ForwardingOs.java:574)
+04-13 17:06:50.552  3760  8882 E SLM-SRV-SLAService: 	at android.app.ActivityThread$AndroidOs.open(ActivityThread.java:8108)
+04-13 17:06:50.552  3760  8882 E SLM-SRV-SLAService: 	at libcore.io.IoBridge.open(IoBridge.java:560)
+04-13 17:06:50.552  3760  8882 E SLM-SRV-SLAService: 	... 11 more
