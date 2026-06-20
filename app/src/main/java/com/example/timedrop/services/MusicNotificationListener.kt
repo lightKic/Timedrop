@@ -1,149 +1,154 @@
 package com.example.timedrop.services
 
 import android.app.Notification
+import android.content.ComponentName
+import android.content.Context
 import android.media.MediaMetadata
 import android.media.session.MediaController
 import android.media.session.MediaSession
+import android.media.session.MediaSessionManager
 import android.media.session.PlaybackState
 import android.service.notification.NotificationListenerService
 import android.service.notification.StatusBarNotification
-import android.os.Build
+import android.os.Handler
+import android.os.Looper
 import androidx.core.os.BundleCompat
-import com.example.timedrop.services.ActiveTrack
-import com.example.timedrop.services.MusicManager
+import android.util.Log
 
-class MusicNotificationListener : NotificationListenerService() {
+class MusicNotificationListener : NotificationListenerService(), MediaSessionManager.OnActiveSessionsChangedListener {
 
     private var currentController: MediaController? = null
+    private val mainHandler = Handler(Looper.getMainLooper())
 
     private val mediaControllerCallback = object : MediaController.Callback() {
         override fun onPlaybackStateChanged(state: PlaybackState?) {
-            super.onPlaybackStateChanged(state)
             MusicManager.updatePlaybackState(state)
-            
-            // If the state is stopped or none, we might want to eventually clear it
-            if (state != null && (state.state == PlaybackState.STATE_STOPPED || state.state == PlaybackState.STATE_NONE)) {
-                MusicManager.updateTrack(null)
-            }
         }
 
         override fun onMetadataChanged(metadata: MediaMetadata?) {
-            super.onMetadataChanged(metadata)
             updateMusicManagerMetadata(metadata)
+        }
+
+        override fun onSessionDestroyed() {
+            super.onSessionDestroyed()
+            refreshFromSessions()
         }
     }
 
     override fun onNotificationPosted(sbn: StatusBarNotification) {
         super.onNotificationPosted(sbn)
-        handleNotification(sbn)
+        // We still check notifications as a trigger for some older apps
+        refreshFromSessions()
     }
 
     override fun onNotificationRemoved(sbn: StatusBarNotification) {
         super.onNotificationRemoved(sbn)
-        val extras = sbn.notification.extras
-        val token = BundleCompat.getParcelable(extras, Notification.EXTRA_MEDIA_SESSION, MediaSession.Token::class.java)
-        
-        // Check if there are ANY media notifications left at all
-        val hasAnyMediaLeft = activeNotifications?.any { 
-            BundleCompat.getParcelable(it.notification.extras, Notification.EXTRA_MEDIA_SESSION, MediaSession.Token::class.java) != null 
-        } ?: false
-
-        if (!hasAnyMediaLeft) {
-            currentController?.unregisterCallback(mediaControllerCallback)
-            currentController = null
-            MusicManager.mediaController = null
-            MusicManager.updateTrack(null)
-            MusicManager.updatePlaybackState(null)
-            return
-        }
-
-        // Only clear if the token being removed is the same as the current controller
-        if (token != null && currentController?.sessionToken == token) {
-            currentController?.unregisterCallback(mediaControllerCallback)
-            currentController = null
-            MusicManager.mediaController = null
-            MusicManager.updateTrack(null)
-            MusicManager.updatePlaybackState(null)
-            
-            // Try to pick up another active one if exists
-            activeNotifications?.forEach { handleNotification(it) }
-        }
+        refreshFromSessions()
     }
 
     override fun onListenerConnected() {
         super.onListenerConnected()
         MusicManager.applicationContext = applicationContext
-        // Check existing notifications on startup
-        activeNotifications?.forEach { handleNotification(it) }
+        val mm = getSystemService(Context.MEDIA_SESSION_SERVICE) as? MediaSessionManager
+        try {
+            val componentName = ComponentName(this, MusicNotificationListener::class.java)
+            mm?.addOnActiveSessionsChangedListener(this, componentName)
+        } catch (e: Exception) {
+            Log.e("MusicListener", "Error adding listener", e)
+        }
+        refreshFromSessions()
     }
 
-    private fun handleNotification(sbn: StatusBarNotification) {
-        val extras = sbn.notification.extras
-        val token = BundleCompat.getParcelable(extras, Notification.EXTRA_MEDIA_SESSION, MediaSession.Token::class.java) as? MediaSession.Token
+    override fun onActiveSessionsChanged(controllers: MutableList<MediaController>?) {
+        refreshFromSessions()
+    }
 
-        if (token != null) {
-            setupController(token)
-        } else {
-            // Some apps like Spotify might post the notification slightly before the token is attached.
-            // Aggressive retry: try every 200ms for 5 times (total 1s)
-            scheduleRetry(sbn, 5)
+    private fun refreshFromSessions() {
+        val mm = getSystemService(Context.MEDIA_SESSION_SERVICE) as? MediaSessionManager ?: return
+        try {
+            val componentName = ComponentName(this, MusicNotificationListener::class.java)
+            val controllers = mm.getActiveSessions(componentName)
+            
+            // Prioritize: 
+            // 1. Existing controller if still playing
+            // 2. Any other playing controller
+            // 3. First available controller
+            
+            val playing = controllers.find { it.playbackState?.state == PlaybackState.STATE_PLAYING }
+            val best = if (currentController?.playbackState?.state == PlaybackState.STATE_PLAYING) {
+                currentController
+            } else {
+                playing ?: controllers.firstOrNull()
+            }
+
+            if (best != null) {
+                setupController(best)
+            } else {
+                // Check notifications as fallback before clearing
+                val hasMediaNotification = activeNotifications?.any { 
+                    it.notification.extras.containsKey(Notification.EXTRA_MEDIA_SESSION) 
+                } ?: false
+                
+                if (!hasMediaNotification) {
+                    clearController()
+                }
+            }
+        } catch (e: Exception) {
+            Log.e("MusicListener", "Error refreshing", e)
         }
     }
 
-    private fun scheduleRetry(sbn: StatusBarNotification, remainingRetries: Int) {
-        if (remainingRetries <= 0) return
-        
-        android.os.Handler(android.os.Looper.getMainLooper()).postDelayed({
-            val retryExtras = sbn.notification.extras
-            val retryToken = BundleCompat.getParcelable(retryExtras, Notification.EXTRA_MEDIA_SESSION, MediaSession.Token::class.java) as? MediaSession.Token
-            if (retryToken != null) {
-                setupController(retryToken)
-            } else {
-                scheduleRetry(sbn, remainingRetries - 1)
+    private fun setupController(controller: MediaController) {
+        if (currentController?.sessionToken == controller.sessionToken) {
+            if (MusicManager.mediaController == null) {
+                syncWithManager(controller)
             }
-        }, 200)
+            return
+        }
+
+        currentController?.unregisterCallback(mediaControllerCallback)
+        currentController = controller
+        currentController?.registerCallback(mediaControllerCallback, mainHandler)
+        syncWithManager(controller)
     }
 
-    private fun setupController(token: MediaSession.Token) {
-        // Same session, ignore
-        if (currentController?.sessionToken == token) return
+    private fun syncWithManager(controller: MediaController) {
+        MusicManager.mediaController = controller
+        updateMusicManagerMetadata(controller.metadata)
+        MusicManager.updatePlaybackState(controller.playbackState)
+    }
 
-        // Unregister old controller if present
+    private fun clearController() {
         currentController?.unregisterCallback(mediaControllerCallback)
-
-        // Register new controller
-        currentController = MediaController(this, token)
-        currentController?.registerCallback(mediaControllerCallback)
-        
-        // Link to manager
-        MusicManager.mediaController = currentController
-        
-        // Initial payload
-        updateMusicManagerMetadata(currentController?.metadata)
-        MusicManager.updatePlaybackState(currentController?.playbackState)
+        currentController = null
+        MusicManager.mediaController = null
+        MusicManager.updateTrack(null)
+        MusicManager.updatePlaybackState(null)
     }
 
     private fun updateMusicManagerMetadata(metadata: MediaMetadata?) {
-        if (metadata == null) return // Don't clear if we just get a null update (keep last)
+        if (metadata == null) return
 
         val title = metadata.getString(MediaMetadata.METADATA_KEY_TITLE)
+            ?: metadata.getString(MediaMetadata.METADATA_KEY_DISPLAY_TITLE)
         val artist = metadata.getString(MediaMetadata.METADATA_KEY_ARTIST)
-        
-        // If we have no title/artist, don't update with "Unknown" yet, might be a partial update
+            ?: metadata.getString(MediaMetadata.METADATA_KEY_DISPLAY_SUBTITLE)
+            ?: metadata.getString(MediaMetadata.METADATA_KEY_ALBUM_ARTIST)
+
         if (title == null && artist == null) return
 
         val duration = metadata.getLong(MediaMetadata.METADATA_KEY_DURATION)
         val albumArt = try {
-             metadata.getBitmap(MediaMetadata.METADATA_KEY_ALBUM_ART) 
+            metadata.getBitmap(MediaMetadata.METADATA_KEY_ALBUM_ART)
                 ?: metadata.getBitmap(MediaMetadata.METADATA_KEY_ART)
+                ?: metadata.getBitmap(MediaMetadata.METADATA_KEY_DISPLAY_ICON)
         } catch (e: Exception) { null }
 
-        val track = ActiveTrack(
+        MusicManager.updateTrack(ActiveTrack(
             title = title ?: "Unknown",
             artist = artist ?: "Unknown",
             durationMs = duration,
             albumArt = albumArt
-        )
-        MusicManager.updateTrack(track)
+        ))
     }
 }

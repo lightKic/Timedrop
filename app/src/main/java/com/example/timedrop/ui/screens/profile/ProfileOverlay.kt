@@ -13,6 +13,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -205,6 +206,20 @@ fun ProfileOverlay(
                     onTogglePassword = { passwordVisible = !passwordVisible },
                     isEditing = false
                 )
+                
+                Spacer(Modifier.height(24.dp))
+                Divider(color = Color.White.copy(alpha = 0.05f))
+                Spacer(Modifier.height(24.dp))
+                
+                // --- CLOUD IDENTITY ---
+                val firebaseUid = com.google.firebase.auth.FirebaseAuth.getInstance().currentUser?.uid ?: "Not Connected"
+                ProfileField(
+                    label = "Cloud Identity (Sync ID)", 
+                    value = firebaseUid, 
+                    icon = Icons.Filled.CloudSync,
+                    isEditing = false,
+                    textColor = Lavender
+                )
             }
             
             Spacer(Modifier.height(40.dp))
@@ -237,7 +252,8 @@ fun ProfileField(
     passwordVisible: Boolean = false,
     onTogglePassword: (() -> Unit)? = null,
     isEditing: Boolean = false,
-    onValueChange: (String) -> Unit = {}
+    onValueChange: (String) -> Unit = {},
+    textColor: Color = Color.White
 ) {
     Column(modifier = Modifier.fillMaxWidth()) {
         Text(
@@ -281,7 +297,7 @@ fun ProfileField(
                 Spacer(Modifier.width(16.dp))
                 Text(
                     text = if (isPassword && !passwordVisible) "••••••••" else value,
-                    style = TextStyle(fontSize = 16.sp, color = Color.White, fontWeight = FontWeight.SemiBold),
+                    style = TextStyle(fontSize = 14.sp, color = textColor, fontWeight = FontWeight.SemiBold),
                     modifier = Modifier.weight(1f)
                 )
                 if (isPassword && onTogglePassword != null) {

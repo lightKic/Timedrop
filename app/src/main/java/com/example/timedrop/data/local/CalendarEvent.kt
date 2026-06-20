@@ -14,7 +14,8 @@ data class CalendarEvent(
     val description: String = "",
     val isTask: Boolean = false,
     val isCompleted: Boolean = false,
-    val repeatInterval: String = "none" // none, daily, weekly
+    val repeatInterval: String = "none", // none, daily, weekly
+    val completedAt: Long = 0L // Timestamp when task was completed
 ) {
     @Ignore
     val localDate: LocalDate = LocalDate.parse(date)

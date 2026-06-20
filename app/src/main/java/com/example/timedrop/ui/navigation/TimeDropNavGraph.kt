@@ -60,6 +60,7 @@ import com.example.timedrop.ui.screens.calendar.EventViewModel
 import com.example.timedrop.ui.screens.notes.NotesViewModel
 import com.example.timedrop.ui.screens.notes.NotesRoute
 import com.example.timedrop.ui.screens.notes.NoteEditorRoute
+import com.example.timedrop.ui.screens.monitoring.MonitoringRoute
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.runtime.LaunchedEffect
@@ -87,6 +88,8 @@ fun TimeDropNavGraph(
     onSetKeepScreenOn: (Boolean) -> Unit,
     onSetNotificationsEnabled: (Boolean) -> Unit,
     onSignOut: () -> Unit,
+    onUploadToCloud: () -> Unit,
+    onDownloadFromCloud: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val navController = rememberNavController()
@@ -187,6 +190,10 @@ fun TimeDropNavGraph(
                                 onSetDiagnosticsEnabled = { settingsViewModel.setDiagnosticsEnabled(it) },
                                 onClearAppHistory = { settingsViewModel.clearAppHistory() },
                                 onSignOut = onSignOutAndNavigate,
+                                onSetAdminModeEnabled = { settingsViewModel.setAdminModeEnabled(it) },
+                                onSetAutoSyncEnabled = { settingsViewModel.setAutoSyncEnabled(it) },
+                                onUploadToCloud = onUploadToCloud,
+                                onDownloadFromCloud = onDownloadFromCloud
                             )
                         }
                     }
@@ -223,6 +230,11 @@ fun TimeDropNavGraph(
                     onSetDiagnosticsEnabled = { settingsViewModel.setDiagnosticsEnabled(it) },
                     onClearAppHistory = { settingsViewModel.clearAppHistory() },
                     onSignOut = onSignOutAndNavigate,
+                    onSetAdminModeEnabled = { settingsViewModel.setAdminModeEnabled(it) },
+                    onSetAutoSyncEnabled = { settingsViewModel.setAutoSyncEnabled(it) },
+                    onUploadToCloud = onUploadToCloud,
+                    onDownloadFromCloud = onDownloadFromCloud,
+                    onNavigateToMonitoring = { navController.navigate(TimeDropDestination.Monitoring.route) }
                 )
             }
             composable(TimeDropDestination.SignUp.route) {
@@ -252,6 +264,9 @@ fun TimeDropNavGraph(
                     viewModel = notesViewModel,
                     onBack = { navController.popBackStack() }
                 )
+            }
+            composable(TimeDropDestination.Monitoring.route) {
+                MonitoringRoute(onBack = { navController.popBackStack() })
             }
         }
 

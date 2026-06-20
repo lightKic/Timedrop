@@ -36,6 +36,7 @@ fun NotesRoute(
 ) {
     val notes by viewModel.allNotes.collectAsState()
     val searchQuery by viewModel.searchQuery.collectAsState()
+    var noteToDelete by remember { mutableStateOf<Note?>(null) }
 
     val colors = MaterialTheme.colorScheme
     val Primary = colors.primary
@@ -114,7 +115,7 @@ fun NotesRoute(
                     NoteCard(
                         note = note, 
                         onClick = { onNavigateToEditor(note.id) },
-                        onDelete = { viewModel.deleteNote(note) },
+                        onDelete = { noteToDelete = note },
                         surfaceHigh = surfaceHigh,
                         primary = Primary,
                         slate = Slate
@@ -143,6 +144,30 @@ fun NotesRoute(
                 Icon(Icons.Filled.Add, null, tint = Color.White, modifier = Modifier.size(32.dp))
             }
         }
+    }
+
+    if (noteToDelete != null) {
+        AlertDialog(
+            onDismissRequest = { noteToDelete = null },
+            containerColor = surfaceLow,
+            titleContentColor = colors.onSurface,
+            textContentColor = Slate,
+            title = { Text("Seguro que quiere borrar", fontWeight = FontWeight.Bold, fontSize = 20.sp) },
+            text = { Text("¿Desea eliminar la nota '${noteToDelete?.title}'?", color = Slate, fontSize = 16.sp) },
+            confirmButton = {
+                TextButton(onClick = {
+                    noteToDelete?.let { viewModel.deleteNote(it) }
+                    noteToDelete = null
+                }) {
+                    Text("Sí", color = Color.Red, fontWeight = FontWeight.Bold)
+                }
+            },
+            dismissButton = {
+                TextButton(onClick = { noteToDelete = null }) {
+                    Text("No", color = Primary)
+                }
+            }
+        )
     }
 }
 

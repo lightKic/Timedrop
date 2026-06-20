@@ -26,9 +26,12 @@ class SettingsDataStore(private val context: Context) {
         val NOTIFICATIONS_ENABLED = booleanPreferencesKey("notifications_enabled")
         val APP_LOCK_ENABLED = booleanPreferencesKey("app_lock_enabled")
         val DIAGNOSTICS_ENABLED = booleanPreferencesKey("diagnostics_enabled")
+        val AUTO_SYNC_ENABLED = booleanPreferencesKey("auto_sync_enabled")
         val CURRENT_USER_EMAIL = stringPreferencesKey("current_user_email")
         val LAST_LOGIN_DATE = stringPreferencesKey("last_login_date")
         val STREAK_COUNT = intPreferencesKey("streak_count")
+        val LONGEST_STREAK = intPreferencesKey("longest_streak")
+        val ADMIN_MODE_ENABLED = booleanPreferencesKey("admin_mode_enabled")
     }
 
     val settingsFlow: Flow<SettingsUiState> =
@@ -45,9 +48,12 @@ class SettingsDataStore(private val context: Context) {
                 notificationsEnabled = prefs[Keys.NOTIFICATIONS_ENABLED] ?: true,
                 isAppLockEnabled = prefs[Keys.APP_LOCK_ENABLED] ?: false,
                 isDiagnosticsEnabled = prefs[Keys.DIAGNOSTICS_ENABLED] ?: true,
+                autoSyncEnabled = prefs[Keys.AUTO_SYNC_ENABLED] ?: true,
                 currentUserEmail = prefs[Keys.CURRENT_USER_EMAIL] ?: "",
                 lastLoginDate = prefs[Keys.LAST_LOGIN_DATE] ?: "",
-                streakCount = prefs[Keys.STREAK_COUNT] ?: 0
+                streakCount = prefs[Keys.STREAK_COUNT] ?: 0,
+                longestStreak = prefs[Keys.LONGEST_STREAK] ?: 0,
+                adminModeEnabled = prefs[Keys.ADMIN_MODE_ENABLED] ?: false
             )
         }
 
@@ -95,6 +101,10 @@ class SettingsDataStore(private val context: Context) {
         context.dataStore.edit { it[Keys.STREAK_COUNT] = count }
     }
 
+    suspend fun setLongestStreak(count: Int) {
+        context.dataStore.edit { it[Keys.LONGEST_STREAK] = count }
+    }
+
     suspend fun setAppLockEnabled(enabled: Boolean) {
         context.dataStore.edit { it[Keys.APP_LOCK_ENABLED] = enabled }
     }
@@ -103,8 +113,16 @@ class SettingsDataStore(private val context: Context) {
         context.dataStore.edit { it[Keys.DIAGNOSTICS_ENABLED] = enabled }
     }
 
+    suspend fun setAutoSyncEnabled(enabled: Boolean) {
+        context.dataStore.edit { it[Keys.AUTO_SYNC_ENABLED] = enabled }
+    }
+
     suspend fun clearAll() {
         context.dataStore.edit { it.clear() }
+    }
+
+    suspend fun setAdminModeEnabled(enabled: Boolean) {
+        context.dataStore.edit { it[Keys.ADMIN_MODE_ENABLED] = enabled }
     }
 }
 

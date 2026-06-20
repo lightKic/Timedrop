@@ -10,10 +10,30 @@ import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import com.example.timedrop.data.SyncRepository
+import com.example.timedrop.data.settings.SettingsDataStore
+
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class NotesViewModel(application: Application) : AndroidViewModel(application) {
-    private val noteDao = AppDatabase.getDatabase(application).noteDao()
+    private val db = AppDatabase.getDatabase(application)
+    private val noteDao = db.noteDao()
+    private val syncRepository = SyncRepository(db)
+    private val settingsStore = SettingsDataStore(application)
+
+    init {
+        viewModelScope.launch {
+            syncRepository.signInAnonymously()
+            settingsStore.settingsFlow.collect { settings ->
+                if (settings.autoSyncEnabled) {
+                    syncRepository.startRealtimeSync()
+                } else {
+                    syncRepository.stopRealtimeSync()
+                }
+            }
+        }
+    }
+
 
     private val _searchQuery = MutableStateFlow("")
     val searchQuery: StateFlow<String> = _searchQuery.asStateFlow()
@@ -48,16 +68,27 @@ class NotesViewModel(application: Application) : AndroidViewModel(application) {
                 category = category
             )
             if (id == 0) {
-                noteDao.insertNote(note)
+                val newId = noteDao.insertNote(note)
+                if (settingsStore.settingsFlow.first().autoSyncEnabled) {
+                    syncRepository.syncNote(note.copy(id = newId.toInt()))
+                }
             } else {
                 noteDao.updateNote(note)
+                if (settingsStore.settingsFlow.first().autoSyncEnabled) {
+                    syncRepository.syncNote(note)
+                }
             }
         }
+
     }
 
     fun deleteNote(note: Note) {
         viewModelScope.launch {
             noteDao.deleteNote(note)
+            if (settingsStore.settingsFlow.first().autoSyncEnabled) {
+                syncRepository.deleteNote(note.id)
+            }
         }
+
     }
 }

@@ -173,7 +173,7 @@ fun MusicRoute(
                 modifier = Modifier.padding(horizontal = 28.dp, vertical = 8.dp)
             ) {
                 Text(
-                    if (!hasPermission || currentTrack?.albumArt == null) "TIME TO FOCUS" else "NOW PLAYING",
+                    if (!hasPermission) "PERMISSION REQUIRED" else if (currentTrack == null) "TIME TO FOCUS" else "NOW PLAYING",
                     style = TextStyle(fontSize = 11.sp, fontWeight = FontWeight.Bold, letterSpacing = 2.sp, color = Lavender),
                 )
             }

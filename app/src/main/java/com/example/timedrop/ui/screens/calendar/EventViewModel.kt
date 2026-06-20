@@ -11,13 +11,34 @@ import com.example.timedrop.data.local.AppDatabase
 import com.example.timedrop.data.local.CalendarEvent
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.delay
 import java.time.LocalDate
 import java.time.YearMonth
 import java.time.format.DateTimeFormatter
 import com.example.timedrop.util.NotificationHelper
+import com.example.timedrop.data.SyncRepository
+import com.example.timedrop.data.settings.SettingsDataStore
+
 
 class EventViewModel(application: Application) : AndroidViewModel(application) {
-    private val eventDao = AppDatabase.getDatabase(application).calendarEventDao()
+    private val db = AppDatabase.getDatabase(application)
+    private val eventDao = db.calendarEventDao()
+    private val syncRepository = SyncRepository(db)
+    private val settingsStore = SettingsDataStore(application)
+
+    init {
+        viewModelScope.launch {
+            syncRepository.signInAnonymously()
+            settingsStore.settingsFlow.collect { settings ->
+                if (settings.autoSyncEnabled) {
+                    syncRepository.startRealtimeSync()
+                } else {
+                    syncRepository.stopRealtimeSync()
+                }
+            }
+        }
+    }
+
 
     var currentMonth by mutableStateOf(YearMonth.now())
         private set
@@ -87,7 +108,9 @@ class EventViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     fun toggleTaskCompletion(event: CalendarEvent) {
-        updateEvent(event.copy(isCompleted = !event.isCompleted))
+        val completing = !event.isCompleted
+        val timestamp = if (completing) System.currentTimeMillis() else 0L
+        updateEvent(event.copy(isCompleted = completing, completedAt = timestamp))
     }
 
     fun addEvent(
@@ -111,21 +134,40 @@ class EventViewModel(application: Application) : AndroidViewModel(application) {
                 repeatInterval = repeatInterval
             )
             val id = eventDao.insertEvent(event)
-            NotificationHelper.scheduleEventAlarms(getApplication(), event.copy(id = id.toInt()))
+            val eventWithId = event.copy(id = id.toInt())
+            NotificationHelper.scheduleEventAlarms(getApplication(), eventWithId)
+            
+            // Sync to Cloud
+            if (settingsStore.settingsFlow.first().autoSyncEnabled) {
+                syncRepository.syncEvent(eventWithId)
+            }
         }
+
     }
 
     fun updateEvent(event: CalendarEvent) {
         viewModelScope.launch {
             eventDao.updateEvent(event)
             NotificationHelper.scheduleEventAlarms(getApplication(), event)
+            
+            // Sync to Cloud
+            if (settingsStore.settingsFlow.first().autoSyncEnabled) {
+                syncRepository.syncEvent(event)
+            }
         }
+
     }
 
     fun removeEvent(event: CalendarEvent) {
         viewModelScope.launch {
             eventDao.deleteEvent(event)
             NotificationHelper.cancelEventAlarms(getApplication(), event)
+            
+            // Delete from Cloud
+            if (settingsStore.settingsFlow.first().autoSyncEnabled) {
+                syncRepository.deleteEvent(event.id)
+            }
         }
+
     }
 }

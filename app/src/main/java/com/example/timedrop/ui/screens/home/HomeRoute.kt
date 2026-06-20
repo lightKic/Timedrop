@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
@@ -21,6 +22,8 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.ui.draw.blur
+import androidx.compose.ui.graphics.graphicsLayer
 import com.example.timedrop.ui.screens.pomodoro.PomodoroMode
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
@@ -39,7 +42,12 @@ import androidx.compose.material.icons.filled.HourglassTop
 import androidx.compose.material3.Icon
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Event
+import androidx.compose.material.icons.filled.RadioButtonUnchecked
+import androidx.compose.material.icons.filled.SkipNext
+import androidx.compose.material.icons.filled.SkipPrevious
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
+import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -55,6 +63,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.blur
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.scale
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
@@ -69,6 +78,7 @@ import com.example.timedrop.ui.screens.calendar.EventViewModel
 import com.example.timedrop.ui.screens.pomodoro.PomodoroViewModel
 import com.example.timedrop.ui.screens.music.MusicViewModel
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import java.time.ZonedDateTime
 import java.time.LocalDate
 import java.time.LocalDateTime
@@ -112,22 +122,44 @@ fun HomeRoute(
     val surfaceHigh = colors.surfaceVariant
     val surfaceLow = colors.surface
     var selectedHomeEvent by remember { mutableStateOf<com.example.timedrop.data.local.CalendarEvent?>(null) }
+    var showStreakDetails by remember { mutableStateOf(false) }
+
     var now by remember { mutableStateOf(ZonedDateTime.now()) }
     val pomodoroState by pomodoroViewModel.uiState.collectAsState()
     val musicState by musicViewModel.uiState.collectAsState()
+    // We no longer need local recentlyCompletedIds since we use event.completedAt timestamp
 
     val context = LocalContext.current
     
     val settingsVm: com.example.timedrop.ui.screens.settings.SettingsViewModel = viewModel()
     val settingsState by settingsVm.uiState.collectAsState()
     
+    var showCelebration by remember { mutableStateOf(false) }
+
     LaunchedEffect(Unit) {
-        settingsVm.checkAndUpdateStreak()
+        if (settingsVm.checkAndUpdateStreak()) {
+            showCelebration = true
+        }
     }
     
     val todayStats by eventViewModel.todayStats.collectAsState()
     val focusTrend by eventViewModel.focusTrend.collectAsState()
     val nextEvents by eventViewModel.events.collectAsState()
+    val allEvents by eventViewModel.allEvents.collectAsState()
+    
+    var showTodayTasksDialog by remember { mutableStateOf(false) }
+    val allTasksGroupedByDate = remember(allEvents) {
+        val today = LocalDate.now()
+        val formatter = java.time.format.DateTimeFormatter.ofPattern("MMM. dd", Locale.US)
+        
+        allEvents
+            .filter { it.isTask && java.time.LocalDate.parse(it.date) >= today }
+            .sortedWith(compareBy({ it.date }, { it.time }))
+            .groupBy { 
+                val d = java.time.LocalDate.parse(it.date)
+                if (d == today) "Today" else formatter.format(d)
+            }
+    }
     
     val nextEventsList = remember(nextEvents, now) {
         val today = LocalDate.now()
@@ -135,21 +167,34 @@ fun HomeRoute(
         val timeFormatter = DateTimeFormatter.ofPattern("hh:mm a", Locale.US)
         
         nextEvents.filter { event ->
-            if (event.isTask && event.isCompleted) return@filter false
-
+            val eventDate = LocalDate.parse(event.date)
             val isOnToday = eventViewModel.isEventOnDate(event, today)
-            val isFutureDate = LocalDate.parse(event.date) > today
+            val isFutureDate = eventDate > today
+            
+            // 5-minute grace period based on completedAt timestamp (synced across devices)
+            val isRecentlyCompleted = event.isCompleted && (System.currentTimeMillis() - event.completedAt) < 300_000L
+            
+            if (isRecentlyCompleted) return@filter true
             
             if (isFutureDate) true
             else if (isOnToday) {
                 try {
                     val eventTime = LocalTime.parse(event.time, timeFormatter)
-                    // Show if it hasn't started OR if it's within the 5-minute grace period
-                    val limitTime = eventTime.plusMinutes(5)
-                    currentTime.isBefore(limitTime)
+                    // Show if it hasn't started
+                    
+                    // If it's an incomplete task, keep it visible so user doesn't lose track
+                    if (event.isTask && !event.isCompleted) true
+                    else {
+                        val limitTime = eventTime.plusMinutes(5)
+                        currentTime.isBefore(limitTime)
+                    }
                 } catch (e: Exception) { true }
+            } else if (eventDate < today) {
+                // Keep it ONLY if it's an incomplete task from a past day
+                event.isTask && !event.isCompleted
             } else false
         }.sortedWith(compareBy({ it.date }, { 
+            val timeFormatter = DateTimeFormatter.ofPattern("hh:mm a", Locale.US)
             try { LocalTime.parse(it.time, timeFormatter) } catch(e: Exception) { LocalTime.MIDNIGHT }
         })).take(3)
     }
@@ -157,7 +202,13 @@ fun HomeRoute(
     LaunchedEffect(Unit) {
         while (true) {
             delay(1000)
+            val prevDate = now.toLocalDate()
             now = ZonedDateTime.now()
+            if (now.toLocalDate().isAfter(prevDate)) {
+                if (settingsVm.checkAndUpdateStreak()) {
+                    showCelebration = true
+                }
+            }
         }
     }
 
@@ -218,7 +269,14 @@ fun HomeRoute(
                             ),
                         )
                     }
-                    Box(modifier = Modifier.size(48.dp))
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        if (settingsState.adminModeEnabled) {
+                            androidx.compose.material3.TextButton(onClick = { showCelebration = true }) {
+                                Text("Test Racha", color = Lavender)
+                            }
+                        }
+                        Box(modifier = Modifier.size(48.dp))
+                    }
                 }
             }
 
@@ -251,7 +309,14 @@ fun HomeRoute(
                                     ),
                                 )
                             }
-                            Box(modifier = Modifier.size(40.dp))
+                            Row(verticalAlignment = Alignment.CenterVertically) {
+                                if (settingsState.adminModeEnabled) {
+                                    androidx.compose.material3.TextButton(onClick = { showCelebration = true }) {
+                                        Text("Test Racha", color = Lavender)
+                                    }
+                                }
+                                Box(modifier = Modifier.size(40.dp))
+                            }
                         }
                     }
 
@@ -261,7 +326,7 @@ fun HomeRoute(
                             .padding(top = if (landscape) 16.dp else 0.dp),
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
-                        BentoStatsSection(todayStats, focusTrend, settingsState.streakCount, colors, Lavender, Orchid, BlueTertiary, Slate)
+                        BentoStatsSection(todayStats, focusTrend, settingsState.streakCount, colors, Lavender, Orchid, BlueTertiary, Slate, onStreakClick = { showStreakDetails = true }, onTasksClick = { showTodayTasksDialog = true })
                         
                         Spacer(Modifier.height(32.dp))
 
@@ -390,14 +455,19 @@ fun HomeRoute(
                                                 Spacer(Modifier.width(8.dp))
                                                 Text(event.time, style = TextStyle(fontSize = 12.sp, color = Slate))
                                                 
-                                                val labelData = try {
+                                                val isDoneGrace = event.isCompleted && (System.currentTimeMillis() - event.completedAt) < 300_000L
+                                                val labelData = if (isDoneGrace) {
+                                                    "DONE" to Color(0xFF4CAF50)
+                                                } else try {
                                                     val timeFormatter = DateTimeFormatter.ofPattern("hh:mm a", Locale.US)
                                                     val eventTime = LocalTime.parse(event.time, timeFormatter)
                                                     val currentTime = LocalTime.now()
                                                     val isNow = eventDate == today && !currentTime.isBefore(eventTime) && currentTime.isBefore(eventTime.plusMinutes(5))
                                                     val isSoon = eventDate == today && currentTime.isAfter(eventTime.minusMinutes(5)) && currentTime.isBefore(eventTime)
-                                                    
+                                                    val isOverdue = event.isTask && !event.isCompleted && (eventDate < today || (eventDate == today && currentTime.isAfter(eventTime.plusMinutes(5))))
+
                                                     when {
+                                                        isOverdue -> "OVERDUE" to Color.Red
                                                         isNow -> "NOW" to Orchid
                                                         isSoon -> "SOON" to Lavender
                                                         else -> null
@@ -417,15 +487,40 @@ fun HomeRoute(
                                                     )
                                                 }
                                             }
-                                            Text(event.title, style = TextStyle(fontSize = 15.sp, fontWeight = FontWeight.Bold, color = colors.onSurface))
+                                            Text(
+                                                event.title,
+                                                style = TextStyle(
+                                                    fontSize = 15.sp,
+                                                    // DONE grace: tachado + gris (igual que calendario)
+                                                    // Completed sin gracia: tachado + gris
+                                                    // Incompleto: bold + color normal
+                                                    fontWeight = if (event.isTask && event.isCompleted) FontWeight.Normal else FontWeight.Bold,
+                                                    color = if (event.isTask && event.isCompleted) Slate else colors.onSurface,
+                                                    textDecoration = if (event.isTask && event.isCompleted) androidx.compose.ui.text.style.TextDecoration.LineThrough else null
+                                                )
+                                            )
                                         }
                                         
-                                        Icon(
-                                            if (event.isTask) Icons.Filled.CheckCircle else Icons.Filled.CalendarMonth, 
-                                            null, 
-                                            tint = if (event.isTask) Lavender else Orchid, 
-                                            modifier = Modifier.size(16.dp)
-                                        )
+                                        if (event.isTask) {
+                                            IconButton(
+                                                onClick = { eventViewModel.toggleTaskCompletion(event) },
+                                                modifier = Modifier.size(36.dp)
+                                            ) {
+                                                Icon(
+                                                    imageVector = if (event.isCompleted) Icons.Filled.CheckCircle else Icons.Filled.RadioButtonUnchecked,
+                                                    contentDescription = "Toggle Task",
+                                                    tint = if (event.isCompleted) Color(0xFF4CAF50) else Lavender,
+                                                    modifier = Modifier.size(24.dp)
+                                                )
+                                            }
+                                        } else {
+                                            Icon(
+                                                imageVector = Icons.Filled.CalendarMonth, 
+                                                contentDescription = null, 
+                                                tint = Orchid, 
+                                                modifier = Modifier.size(16.dp)
+                                            )
+                                        }
                                     }
                                 }
                             } else {
@@ -470,59 +565,96 @@ fun HomeRoute(
                             // Music Row
                             // Music Widget (Hide if no track)
                             if (musicState.currentTrack != null) {
+                                val track = musicState.currentTrack!!
                                 Row(
-                                    verticalAlignment = Alignment.CenterVertically,
-                                    horizontalArrangement = Arrangement.Center
+                                    modifier = Modifier.fillMaxWidth(),
+                                    verticalAlignment = Alignment.CenterVertically
                                 ) {
-                                    val track = musicState.currentTrack!!
-                                    Column(modifier = Modifier.weight(1f)) {
-                                        Row(verticalAlignment = Alignment.CenterVertically) {
-                                            Box(Modifier.size(8.dp).background(BlueTertiary, CircleShape))
-                                            Spacer(Modifier.width(12.dp))
+                                    Row(
+                                        modifier = Modifier
+                                            .weight(1f)
+                                            .clickable { onNavigateMusic() },
+                                        verticalAlignment = Alignment.CenterVertically
+                                    ) {
+                                        // Circular Album Art or Music Icon
+                                        Box(
+                                            modifier = Modifier
+                                                .size(40.dp)
+                                                .clip(CircleShape)
+                                                .background(surfaceHigh),
+                                            contentAlignment = Alignment.Center
+                                        ) {
+                                            if (track.albumArt != null) {
+                                                Image(
+                                                    bitmap = track.albumArt.asImageBitmap(),
+                                                    contentDescription = "Album Art",
+                                                    modifier = Modifier.fillMaxSize(),
+                                                    contentScale = ContentScale.Crop
+                                                )
+                                            } else {
+                                                Icon(
+                                                    Icons.Filled.MusicNote,
+                                                    null,
+                                                    tint = Lavender.copy(alpha = 0.6f),
+                                                    modifier = Modifier.size(20.dp)
+                                                )
+                                            }
+                                        }
+                                        
+                                        Spacer(Modifier.width(12.dp))
+                                        
+                                        Column(modifier = Modifier.weight(1f)) {
                                             Text(
                                                 track.title, 
                                                 style = TextStyle(fontSize = 14.sp, fontWeight = FontWeight.Bold, color = colors.onSurface),
-                                                maxLines = 2,
-                                                softWrap = true
+                                                maxLines = 1,
+                                                overflow = TextOverflow.Ellipsis
                                             )
-                                        }
-                                        Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(start = 20.dp, top = 2.dp)) {
-                                            Icon(
-                                                imageVector = if (musicState.isPlaying) Icons.Filled.MusicNote else Icons.Filled.Pause, 
-                                                contentDescription = null, 
-                                                tint = BlueTertiary.copy(alpha = 0.7f), 
-                                                modifier = Modifier.size(12.dp)
-                                            )
-                                            Spacer(Modifier.width(6.dp))
                                             Text(
                                                 if (musicState.isPlaying) track.artist else "Paused", 
-                                                style = TextStyle(fontSize = 12.sp, color = Slate),
+                                                style = TextStyle(fontSize = 11.sp, color = Slate),
                                                 maxLines = 1,
                                                 overflow = TextOverflow.Ellipsis
                                             )
                                         }
                                     }
                                     
-                                    Spacer(Modifier.width(16.dp))
+                                    Spacer(Modifier.width(8.dp))
                                     
-                                    // Small Play/Pause Button
-                                    IconButton(
-                                        onClick = { musicViewModel.togglePlayPause() },
-                                        modifier = Modifier
-                                            .size(32.dp)
-                                            .background(colors.surfaceVariant, CircleShape)
-                                    ) {
-                                        Icon(
-                                            imageVector = if (musicState.isPlaying) Icons.Filled.Pause else Icons.Filled.PlayArrow,
-                                            contentDescription = "Toggle Music",
-                                            tint = colors.onSurface,
-                                            modifier = Modifier.size(16.dp)
-                                        )
+                                    // Player Controls
+                                    Row(verticalAlignment = Alignment.CenterVertically) {
+                                        IconButton(onClick = { musicViewModel.skipPrevious() }, modifier = Modifier.size(32.dp)) {
+                                            Icon(Icons.Filled.SkipPrevious, "Prev", tint = Slate, modifier = Modifier.size(20.dp))
+                                        }
+                                        
+                                        Spacer(Modifier.width(4.dp))
+                                        
+                                        IconButton(
+                                            onClick = { musicViewModel.togglePlayPause() },
+                                            modifier = Modifier
+                                                .size(36.dp)
+                                                .background(colors.surfaceVariant, CircleShape)
+                                        ) {
+                                            Icon(
+                                                if (musicState.isPlaying) Icons.Filled.Pause else Icons.Filled.PlayArrow, 
+                                                null, 
+                                                tint = colors.onSurface,
+                                                modifier = Modifier.size(20.dp)
+                                            )
+                                        }
+                                        
+                                        Spacer(Modifier.width(4.dp))
+                                        
+                                        IconButton(onClick = { musicViewModel.skipNext() }, modifier = Modifier.size(32.dp)) {
+                                            Icon(Icons.Filled.SkipNext, "Next", tint = Slate, modifier = Modifier.size(20.dp))
+                                        }
                                     }
                                 }
                             }
                         }
                     }
+                    
+                    Spacer(modifier = Modifier.height(if (landscape) 100.dp else 120.dp))
                 }
             }
         }
@@ -541,73 +673,121 @@ fun HomeRoute(
                 SurfaceLow = surfaceLow
             )
         }
+
+        if (showStreakDetails) {
+            StreakDetailsScreen(
+                currentStreak = settingsState.streakCount,
+                longestStreak = settingsState.longestStreak,
+                isAdminMode = settingsState.adminModeEnabled,
+                onSetStreak = { settingsVm.setStreakCount(it) },
+                onDismiss = { showStreakDetails = false }
+            )
+        }
+
+        if (showCelebration) {
+            StreakCelebrationScreen(
+                currentStreak = settingsState.streakCount,
+                onDismiss = { showCelebration = false }
+            )
+        }
+
+        if (showTodayTasksDialog) {
+            androidx.compose.material3.AlertDialog(
+                onDismissRequest = { showTodayTasksDialog = false },
+                containerColor = surfaceLow,
+                titleContentColor = colors.onSurface,
+                textContentColor = Slate,
+                title = { Text("All Pending Tasks", style = TextStyle(fontSize = 20.sp, fontWeight = FontWeight.ExtraBold)) },
+                text = {
+                    Column(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .heightIn(max = 400.dp)
+                            .verticalScroll(rememberScrollState()),
+                        verticalArrangement = Arrangement.spacedBy(16.dp)
+                    ) {
+                        if (allTasksGroupedByDate.isEmpty()) {
+                            Text("No pending tasks.", style = TextStyle(fontSize = 14.sp, color = Slate))
+                        } else {
+                            allTasksGroupedByDate.forEach { (dateGroup, tasks) ->
+                                Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                                    Text(
+                                        text = "Tasks $dateGroup",
+                                        style = TextStyle(fontSize = 12.sp, fontWeight = FontWeight.ExtraBold, color = Orchid, letterSpacing = 1.sp)
+                                    )
+                                    tasks.forEach { task ->
+                                        Row(
+                                            modifier = Modifier
+                                                .fillMaxWidth()
+                                                .clickable { eventViewModel.toggleTaskCompletion(task) }
+                                                .background(if (task.isCompleted) surfaceHigh.copy(alpha = 0.5f) else surfaceHigh, RoundedCornerShape(12.dp))
+                                                .padding(12.dp),
+                                            verticalAlignment = Alignment.CenterVertically
+                                        ) {
+                                            Icon(
+                                                imageVector = if (task.isCompleted) Icons.Filled.CheckCircle else Icons.Filled.RadioButtonUnchecked,
+                                                contentDescription = null,
+                                                tint = if (task.isCompleted) Color(0xFF4CAF50) else Lavender,
+                                                modifier = Modifier.size(20.dp)
+                                            )
+                                            Spacer(Modifier.width(12.dp))
+                                            Column {
+                                                Text(
+                                                    text = task.title,
+                                                    style = TextStyle(
+                                                        fontSize = 14.sp,
+                                                        fontWeight = if (task.isCompleted) FontWeight.Normal else FontWeight.Bold,
+                                                        color = if (task.isCompleted) Slate else colors.onSurface,
+                                                        textDecoration = if (task.isCompleted) androidx.compose.ui.text.style.TextDecoration.LineThrough else null
+                                                    )
+                                                )
+                                                Text(
+                                                    text = task.time,
+                                                    style = TextStyle(
+                                                        fontSize = 12.sp,
+                                                        color = Slate,
+                                                        fontWeight = FontWeight.SemiBold
+                                                    )
+                                                )
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                confirmButton = {
+                    androidx.compose.material3.TextButton(onClick = { showTodayTasksDialog = false }) {
+                        Text("Close", color = Lavender, fontWeight = FontWeight.Bold)
+                    }
+                }
+            )
+        }
     }
     }
  }
 
 @Composable
 private fun HourglassFireGlow(streakCount: Int, colors: androidx.compose.material3.ColorScheme, orchid: Color) {
-    val infiniteTransition = androidx.compose.animation.core.rememberInfiniteTransition(label = "fire")
-    
-    // Animate size of the glow pulse
-    val scale by infiniteTransition.animateFloat(
-        initialValue = 0.8f,
-        targetValue = 1.3f,
-        animationSpec = androidx.compose.animation.core.infiniteRepeatable(
-            animation = androidx.compose.animation.core.tween(1500, easing = androidx.compose.animation.core.LinearEasing),
-            repeatMode = androidx.compose.animation.core.RepeatMode.Reverse
-        ),
-        label = "scale"
-    )
-
-    // Animate alpha for flickering effect
-    val alpha by infiniteTransition.animateFloat(
-        initialValue = 0.3f,
-        targetValue = 0.7f,
-        animationSpec = androidx.compose.animation.core.infiniteRepeatable(
-            animation = androidx.compose.animation.core.tween(800, easing = androidx.compose.animation.core.FastOutSlowInEasing),
-            repeatMode = androidx.compose.animation.core.RepeatMode.Reverse
-        ),
-        label = "alpha"
-    )
-
-    // Dynamic fire color (shifts between orchid and a fiery orange-red)
-    val fireColor = Color(0xFFFF4D00) // Fiery Orange-Red
-
-    Box(contentAlignment = Alignment.Center, modifier = Modifier.size(32.dp)) {
-        // Outer Glow (Blurred aura)
-        Box(
-            modifier = Modifier
-                .size(24.dp)
-                .scale(scale)
-                .blur(8.dp)
-                .background(
-                    Brush.radialGradient(
-                        listOf(fireColor.copy(alpha = alpha), orchid.copy(alpha = 0.2f), Color.Transparent)
-                    ),
-                    CircleShape
-                )
-        )
-        
-        // Secondary Inner Pulse
-        Box(
-            modifier = Modifier
-                .size(16.dp)
-                .scale(scale * 0.9f)
-                .background(
-                    fireColor.copy(alpha = alpha * 0.5f),
-                    CircleShape
-                )
-                .blur(4.dp)
-        )
-
-        // The Hourglass Icon itself
-        Icon(
-            imageVector = Icons.Filled.HourglassTop,
-            contentDescription = null,
-            tint = Color.White,
-            modifier = Modifier.size(16.dp)
-        )
+    if (streakCount > 0) {
+        Box(contentAlignment = Alignment.Center, modifier = Modifier.size(56.dp)) {
+            com.example.timedrop.ui.screens.home.LoopingVideoPlayer(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .clip(CircleShape),
+                videoRes = com.example.timedrop.R.raw.logo_video
+            )
+        }
+    } else {
+        Box(contentAlignment = Alignment.Center, modifier = Modifier.size(40.dp)) {
+            Icon(
+                imageVector = Icons.Filled.HourglassTop,
+                contentDescription = "Inactive Streak",
+                tint = colors.onSurface.copy(alpha = 0.3f),
+                modifier = Modifier.size(24.dp)
+            )
+        }
     }
 }
 
@@ -620,7 +800,9 @@ private fun BentoStatsSection(
     lavender: Color,
     orchid: Color,
     blue: Color,
-    slate: Color
+    slate: Color,
+    onStreakClick: () -> Unit = {},
+    onTasksClick: () -> Unit = {}
 ) {
     // Landscape might need a different spacing, but let's stick to simple row for now
     Row(
@@ -629,28 +811,36 @@ private fun BentoStatsSection(
             .padding(horizontal = 24.dp),
         horizontalArrangement = Arrangement.spacedBy(12.dp)
     ) {
-        // Daily Progress
-        Surface(
-            modifier = Modifier.weight(1f).height(120.dp),
-            shape = RoundedCornerShape(24.dp),
-            color = colors.surfaceVariant.copy(alpha = 0.5f),
-            border = androidx.compose.foundation.BorderStroke(0.5.dp, Color.White.copy(alpha = 0.05f))
-        ) {
-            Column(Modifier.padding(12.dp), verticalArrangement = Arrangement.SpaceBetween) {
-                Box(Modifier.size(28.dp).background(lavender.copy(alpha = 0.1f), CircleShape), contentAlignment = Alignment.Center) {
-                    Icon(Icons.Filled.CheckCircle, null, tint = lavender, modifier = Modifier.size(14.dp))
-                }
-                Column {
-                    val (done, total) = todayStats
-                    Text("${if (total > 0) (done * 100 / total) else 0}%", style = TextStyle(fontSize = 20.sp, fontWeight = FontWeight.ExtraBold, color = colors.onSurface))
-                    Text("Tasks Done", style = TextStyle(fontSize = 10.sp, fontWeight = FontWeight.Bold, color = slate, letterSpacing = 0.5.sp))
+        val (done, total) = todayStats
+        
+        // Daily Progress (Only show if there are tasks)
+        if (total > 0) {
+            Surface(
+                modifier = Modifier.weight(1f).height(120.dp).clickable { onTasksClick() },
+                shape = RoundedCornerShape(24.dp),
+                color = colors.surfaceVariant.copy(alpha = 0.5f),
+                border = androidx.compose.foundation.BorderStroke(0.5.dp, Color.White.copy(alpha = 0.05f))
+            ) {
+                Column(Modifier.padding(12.dp), verticalArrangement = Arrangement.SpaceBetween) {
+                    Box(Modifier.size(28.dp).background(lavender.copy(alpha = 0.1f), CircleShape), contentAlignment = Alignment.Center) {
+                        Icon(Icons.Filled.CheckCircle, null, tint = lavender, modifier = Modifier.size(14.dp))
+                    }
+                    Column {
+                        if (done == total) {
+                            Text("$done/$total", style = TextStyle(fontSize = 20.sp, fontWeight = FontWeight.ExtraBold, color = Color(0xFF4CAF50))) // Green
+                            Text("All Done! 🎉", style = TextStyle(fontSize = 10.sp, fontWeight = FontWeight.Bold, color = slate, letterSpacing = 0.5.sp))
+                        } else {
+                            Text("$done/$total", style = TextStyle(fontSize = 20.sp, fontWeight = FontWeight.ExtraBold, color = colors.onSurface))
+                            Text("Tasks Done", style = TextStyle(fontSize = 10.sp, fontWeight = FontWeight.Bold, color = slate, letterSpacing = 0.5.sp))
+                        }
+                    }
                 }
             }
         }
 
         // Daily Consistency (Hourglass Streak)
         Surface(
-            modifier = Modifier.weight(1f).height(120.dp),
+            modifier = Modifier.weight(1f).height(120.dp).clickable { onStreakClick() },
             shape = RoundedCornerShape(24.dp),
             color = colors.surfaceVariant.copy(alpha = 0.5f),
             border = androidx.compose.foundation.BorderStroke(0.5.dp, Color.White.copy(alpha = 0.05f))
@@ -662,40 +852,6 @@ private fun BentoStatsSection(
                     Text("$streakCount Days", style = TextStyle(fontSize = 20.sp, fontWeight = FontWeight.ExtraBold, color = colors.onSurface))
                     Text("Consistency", style = TextStyle(fontSize = 10.sp, fontWeight = FontWeight.Bold, color = slate, letterSpacing = 0.5.sp))
                 }
-            }
-        }
-
-        // Focus Trend (Mini Chart)
-        Surface(
-            modifier = Modifier.weight(1.2f).height(120.dp),
-            shape = RoundedCornerShape(24.dp),
-            color = colors.surfaceVariant.copy(alpha = 0.5f),
-            border = androidx.compose.foundation.BorderStroke(0.5.dp, Color.White.copy(alpha = 0.05f))
-        ) {
-            Column(Modifier.padding(12.dp), verticalArrangement = Arrangement.SpaceBetween) {
-                 Row(verticalAlignment = Alignment.CenterVertically) {
-                     Icon(Icons.Filled.Timer, null, tint = blue, modifier = Modifier.size(14.dp))
-                     Spacer(Modifier.width(8.dp))
-                     Text("TREND", style = TextStyle(fontSize = 9.sp, fontWeight = FontWeight.Bold, color = blue, letterSpacing = 1.sp))
-                 }
-                 
-                 // Miniature Bar Chart
-                 Row(
-                     modifier = Modifier.fillMaxWidth().height(32.dp),
-                     horizontalArrangement = Arrangement.spacedBy(3.dp),
-                     verticalAlignment = Alignment.Bottom
-                 ) {
-                     focusTrend.forEach { value ->
-                         Box(
-                             Modifier
-                                 .weight(1f)
-                                 .fillMaxHeight(value)
-                                 .background(Brush.verticalGradient(listOf(blue, blue.copy(alpha = 0.3f))), RoundedCornerShape(topStart = 4.dp, topEnd = 4.dp))
-                         )
-                     }
-                 }
-                 
-                 Text("Keep going!", style = TextStyle(fontSize = 10.sp, fontWeight = FontWeight.Medium, color = colors.onSurface))
             }
         }
     }

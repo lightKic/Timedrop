@@ -37,7 +37,16 @@ import androidx.compose.material.icons.filled.MotionPhotosOn
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.Palette
 import androidx.compose.material.icons.filled.Security
+import androidx.compose.material.icons.filled.Description
+import androidx.compose.material.icons.filled.TaskAlt
+import androidx.compose.material.icons.filled.Whatshot
+import androidx.compose.material.icons.filled.CloudUpload
+import androidx.compose.material.icons.filled.CloudDownload
 import androidx.compose.material.icons.filled.Vibration
+import androidx.compose.material.icons.filled.ChevronRight
+import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.OutlinedTextField
@@ -84,6 +93,11 @@ fun SettingsRoute(
     onSetDiagnosticsEnabled: (Boolean) -> Unit,
     onClearAppHistory: () -> Unit,
     onSignOut: () -> Unit,
+    onSetAdminModeEnabled: (Boolean) -> Unit,
+    onSetAutoSyncEnabled: (Boolean) -> Unit,
+    onUploadToCloud: () -> Unit,
+    onDownloadFromCloud: () -> Unit,
+    onNavigateToMonitoring: () -> Unit = {}
 ) {
     val colors = MaterialTheme.colorScheme
     val Lavender = colors.primary
@@ -336,7 +350,109 @@ fun SettingsRoute(
                 )
             }
 
-            Spacer(Modifier.height(16.dp))
+            // ══════════════════════════════════════════
+            //  Premium Cloud Dashboard
+            // ══════════════════════════════════════════
+            SectionLabel("Cloud Synchronization", Slate)
+            Surface(
+                shape = RoundedCornerShape(32.dp),
+                color = surfaceContainer,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 20.dp),
+            ) {
+                Column(modifier = Modifier.padding(20.dp)) {
+                    // Summary Row
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceEvenly
+                    ) {
+                        CloudStatItem("Notes", state.localNotesCount.toString(), Icons.Filled.Description, Orchid)
+                        CloudStatItem("Tasks", state.localEventsCount.toString(), Icons.Filled.TaskAlt, Lavender)
+                        CloudStatItem("Streak", state.streakCount.toString(), Icons.Filled.Whatshot, Color(0xFFFF9800))
+                    }
+
+                    Spacer(Modifier.height(24.dp))
+                    
+                    ToggleSettingItem(
+                        icon = Icons.Filled.AutoAwesome,
+                        iconTint = Orchid,
+                        title = "Automatic Sync",
+                        subtitle = "Sync in background instantly",
+                        checked = state.autoSyncEnabled,
+                        trackColor = Orchid.copy(alpha = 0.25f),
+                        thumbColor = Orchid,
+                        onCheckedChange = onSetAutoSyncEnabled,
+                        surfaceHighest = surfaceHighest,
+                        textColor = colors.onSurface
+                    )
+
+                    Spacer(Modifier.height(16.dp))
+                    
+                    // Progress Bar
+                    if (state.syncProgress > 0f) {
+                        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                            androidx.compose.material3.LinearProgressIndicator(
+                                progress = { state.syncProgress },
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .height(8.dp)
+                                    .clip(RoundedCornerShape(4.dp)),
+                                color = Lavender,
+                                trackColor = Lavender.copy(alpha = 0.1f),
+                            )
+                            Spacer(Modifier.height(8.dp))
+                            Text(
+                                "Syncing... ${(state.syncProgress * 100).toInt()}%",
+                                style = TextStyle(fontSize = 12.sp, color = Lavender, fontWeight = FontWeight.Bold)
+                            )
+                        }
+                        Spacer(Modifier.height(16.dp))
+                    }
+
+                    HorizontalDivider(color = Color.White.copy(alpha = 0.05f))
+                    Spacer(Modifier.height(24.dp))
+
+                    // Action Buttons
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(12.dp)
+                    ) {
+                        // Upload
+                        Button(
+                            onClick = onUploadToCloud,
+                            modifier = Modifier.weight(1f).height(50.dp),
+                            shape = RoundedCornerShape(16.dp),
+                            colors = ButtonDefaults.buttonColors(containerColor = Lavender.copy(alpha = 0.15f))
+                        ) {
+                            Icon(Icons.Filled.CloudUpload, null, tint = Lavender, modifier = Modifier.size(18.dp))
+                            Spacer(Modifier.width(8.dp))
+                            Text("Upload", color = Lavender, fontWeight = FontWeight.Bold)
+                        }
+
+                        // Download
+                        Button(
+                            onClick = onDownloadFromCloud,
+                            modifier = Modifier.weight(1f).height(50.dp),
+                            shape = RoundedCornerShape(16.dp),
+                            colors = ButtonDefaults.buttonColors(containerColor = Orchid.copy(alpha = 0.15f))
+                        ) {
+                            Icon(Icons.Filled.CloudDownload, null, tint = Orchid, modifier = Modifier.size(18.dp))
+                            Spacer(Modifier.width(8.dp))
+                            Text("Download", color = Orchid, fontWeight = FontWeight.Bold)
+                        }
+                    }
+                    
+                    Spacer(Modifier.height(12.dp))
+                    Text(
+                        "Last synced ID: ${state.firebaseUserId.take(8)}...",
+                        style = TextStyle(fontSize = 10.sp, color = Slate.copy(alpha = 0.5f)),
+                        modifier = Modifier.align(Alignment.CenterHorizontally)
+                    )
+                }
+            }
+
+            Spacer(Modifier.height(24.dp))
 
             // ── Danger zone ──
             Surface(
@@ -377,19 +493,58 @@ fun SettingsRoute(
                 }
             }
 
+            // Admin: Monitoring button
+            if (state.adminModeEnabled) {
+                Spacer(Modifier.height(16.dp))
+                Surface(
+                    onClick = onNavigateToMonitoring,
+                    shape = RoundedCornerShape(20.dp),
+                    color = Color(0xFF1A1A2E),
+                    border = androidx.compose.foundation.BorderStroke(1.dp, Lavender.copy(alpha = 0.30f)),
+                    modifier = Modifier.fillMaxWidth().padding(horizontal = 20.dp)
+                ) {
+                    Row(
+                        modifier = Modifier.padding(20.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(14.dp)
+                    ) {
+                        Box(
+                            Modifier.size(40.dp).clip(RoundedCornerShape(12.dp)).background(Lavender.copy(alpha = 0.15f)),
+                            contentAlignment = Alignment.Center
+                        ) { Text("👑", fontSize = 20.sp) }
+                        Column(Modifier.weight(1f)) {
+                            Text("Monitoring", style = TextStyle(fontSize = 15.sp, fontWeight = FontWeight.SemiBold, color = Lavender))
+                            Text("Firebase ops · Cuotas · Logs", style = TextStyle(fontSize = 12.sp, color = Slate.copy(alpha = 0.6f)))
+                        }
+                        Icon(Icons.Filled.ChevronRight, null, tint = Lavender.copy(alpha = 0.5f))
+                    }
+                }
+            }
+
             Spacer(Modifier.height(16.dp))
 
             // Version
             Text(
                 "TimeDrop v1.0.0",
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(bottom = 20.dp),
+                modifier = Modifier.fillMaxWidth(),
                 style = TextStyle(
                     fontSize = 11.sp,
                     color = Slate.copy(alpha = 0.4f),
                     fontWeight = FontWeight.Medium,
                     letterSpacing = 1.sp,
+                ),
+                textAlign = androidx.compose.ui.text.style.TextAlign.Center,
+            )
+
+            // DEBUG: Sync ID
+            Text(
+                "Sync ID: ${state.firebaseUserId}",
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(bottom = 32.dp),
+                style = TextStyle(
+                    fontSize = 10.sp,
+                    color = Slate.copy(alpha = 0.3f),
                 ),
                 textAlign = androidx.compose.ui.text.style.TextAlign.Center,
             )
@@ -408,7 +563,8 @@ fun SettingsRoute(
                 surfaceHighest = surfaceHighest,
                 Lavender = Lavender,
                 Orchid = Orchid,
-                Slate = Slate
+                Slate = Slate,
+                onSetAdminModeEnabled = onSetAdminModeEnabled
             )
         }
 
@@ -466,7 +622,8 @@ private fun PrivacyOverlay(
     surfaceHighest: Color,
     Lavender: Color,
     Orchid: Color,
-    Slate: Color
+    Slate: Color,
+    onSetAdminModeEnabled: (Boolean) -> Unit
 ) {
     Box(
         modifier = Modifier
@@ -541,6 +698,24 @@ private fun PrivacyOverlay(
                 )
                 
                 Spacer(Modifier.height(16.dp))
+                
+                // Section: Developer/Admin Mode
+                if (state.currentUserEmail.contains("admin", ignoreCase = true) || state.currentUserEmail.contains("luis", ignoreCase = true)) {
+                    SectionLabel("Developer", Slate)
+                    ToggleSettingItem(
+                        icon = Icons.Filled.AutoAwesome,
+                        iconTint = Color(0xFFFFB300),
+                        title = "Admin Mode",
+                        subtitle = "Enable testing and debugging features",
+                        checked = state.adminModeEnabled,
+                        trackColor = Color(0xFFFFB300).copy(alpha = 0.3f),
+                        thumbColor = Color(0xFFFFB300),
+                        onCheckedChange = onSetAdminModeEnabled,
+                        surfaceHighest = surfaceHighest,
+                        textColor = colors.onSurface
+                    )
+                    Spacer(Modifier.height(16.dp))
+                }
                 
                 // Section: Danger Zone
                 SectionLabel("Local data", Slate)
@@ -716,5 +891,65 @@ private fun InfoCard(
                 )
             }
         }
+    }
+}
+
+@Composable
+private fun SyncItem(
+    icon: ImageVector,
+    iconTint: Color,
+    title: String,
+    subtitle: String,
+    onClick: () -> Unit,
+    surfaceHighest: Color,
+    textColor: Color
+) {
+    val Slate = Color(0xFFADAAAA)
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .clickable { onClick() }
+            .padding(horizontal = 20.dp, vertical = 18.dp),
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        Box(
+            Modifier
+                .size(40.dp)
+                .clip(RoundedCornerShape(12.dp))
+                .background(surfaceHighest),
+            contentAlignment = Alignment.Center,
+        ) {
+            Icon(icon, null, tint = iconTint, modifier = Modifier.size(20.dp))
+        }
+        Spacer(Modifier.width(14.dp))
+        Column(Modifier.weight(1f)) {
+            Text(
+                title,
+                style = TextStyle(fontSize = 15.sp, fontWeight = FontWeight.SemiBold, color = textColor),
+            )
+            Text(
+                subtitle,
+                style = TextStyle(fontSize = 13.sp, color = iconTint.copy(alpha = 0.7f)),
+            )
+        }
+        Icon(Icons.AutoMirrored.Filled.KeyboardArrowRight, null, tint = Slate)
+    }
+}
+
+@Composable
+private fun CloudStatItem(label: String, value: String, icon: ImageVector, tint: Color) {
+    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+        Box(
+            modifier = Modifier
+                .size(44.dp)
+                .clip(CircleShape)
+                .background(tint.copy(alpha = 0.1f)),
+            contentAlignment = Alignment.Center
+        ) {
+            Icon(icon, null, tint = tint, modifier = Modifier.size(20.dp))
+        }
+        Spacer(Modifier.height(8.dp))
+        Text(value, style = TextStyle(fontSize = 16.sp, fontWeight = FontWeight.Bold, color = Color.White))
+        Text(label, style = TextStyle(fontSize = 10.sp, color = Color(0xFFADAAAA)))
     }
 }

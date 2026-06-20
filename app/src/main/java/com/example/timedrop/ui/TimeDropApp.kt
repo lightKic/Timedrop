@@ -38,6 +38,8 @@ fun TimeDropApp() {
                     onSetKeepScreenOn = settingsVm::setKeepScreenOn,
                     onSetNotificationsEnabled = settingsVm::setNotificationsEnabled,
                     onSignOut = settingsVm::signOut,
+                    onUploadToCloud = settingsVm::syncAllToCloud,
+                    onDownloadFromCloud = settingsVm::syncAllFromCloud,
                 )
 
                 NowPlayingBubbleHost()

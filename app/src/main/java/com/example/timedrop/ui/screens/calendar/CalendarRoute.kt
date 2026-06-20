@@ -347,6 +347,19 @@ private fun EventsContent(
 @Composable
 private fun EventCard(event: CalendarEvent, onClick: () -> Unit, onToggleTask: () -> Unit = {}, Slate: Color, onBg: Color, Primary: Color, surfaceLow: Color) {
     val isCompleted = event.isTask && event.isCompleted
+    val isOverdue = remember(event) {
+        if (!event.isTask || event.isCompleted) false
+        else {
+            try {
+                val today = java.time.LocalDate.now()
+                val currentTime = java.time.LocalTime.now()
+                val eventDate = java.time.LocalDate.parse(event.date)
+                val timeFormatter = java.time.format.DateTimeFormatter.ofPattern("hh:mm a", java.util.Locale.US)
+                val eventTime = java.time.LocalTime.parse(event.time, timeFormatter)
+                eventDate < today || (eventDate == today && currentTime.isAfter(eventTime.plusMinutes(5)))
+            } catch (e: Exception) { false }
+        }
+    }
     
     Surface(
         onClick = onClick,
@@ -355,7 +368,13 @@ private fun EventCard(event: CalendarEvent, onClick: () -> Unit, onToggleTask: (
         modifier = Modifier.fillMaxWidth().padding(bottom = 12.dp)
     ) {
         Row(modifier = Modifier.fillMaxWidth().height(80.dp)) {
-            Box(Modifier.width(4.dp).fillMaxSize().background(if (isCompleted) Slate else Color(event.colorArgb)))
+            Box(Modifier.width(4.dp).fillMaxSize().background(
+                when {
+                    isCompleted -> Slate
+                    isOverdue -> Color.Red
+                    else -> Color(event.colorArgb)
+                }
+            ))
             Row(modifier = Modifier.fillMaxSize().padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
                 if (event.isTask) {
                     Box(
@@ -380,7 +399,11 @@ private fun EventCard(event: CalendarEvent, onClick: () -> Unit, onToggleTask: (
                         style = TextStyle(
                             fontSize = 16.sp, 
                             fontWeight = FontWeight.Bold, 
-                            color = if (isCompleted) Slate else onBg,
+                            color = when {
+                                isCompleted -> Slate
+                                isOverdue -> Color.Red
+                                else -> onBg
+                            },
                             textDecoration = if (isCompleted) TextDecoration.LineThrough else null
                         )
                     )
@@ -391,7 +414,11 @@ private fun EventCard(event: CalendarEvent, onClick: () -> Unit, onToggleTask: (
                         style = TextStyle(
                             fontSize = 16.sp, 
                             fontWeight = FontWeight.SemiBold, 
-                            color = if (isCompleted) Slate else onBg,
+                            color = when {
+                                isCompleted -> Slate
+                                isOverdue -> Color.Red
+                                else -> onBg
+                            },
                             textDecoration = if (isCompleted) TextDecoration.LineThrough else null
                         )
                     )
@@ -424,6 +451,7 @@ fun CreateEventModal(
     var eventDate by remember { mutableStateOf(editingEvent?.localDate ?: selectedDate) }
     var isTask by remember { mutableStateOf(editingEvent?.isTask ?: false) }
     var repeatInterval by remember { mutableStateOf(editingEvent?.repeatInterval ?: "none") }
+    var showDeleteConfirm by remember { mutableStateOf(false) }
     
     // Parse time if editing (e.g., "12:00 PM")
     val initialHour = remember(editingEvent) {
@@ -471,7 +499,7 @@ fun CreateEventModal(
                 Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
                     Text(if (isReadOnly) "Event Details" else if (editingEvent != null) "Edit Event" else "New Event", style = TextStyle(fontSize = 20.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurfaceVariant))
                     if (editingEvent != null && !isReadOnly) {
-                        IconButton(onClick = onDelete) {
+                        IconButton(onClick = { showDeleteConfirm = true }) {
                             Icon(Icons.Filled.Delete, "Delete", tint = Color.Red.copy(alpha = 0.7f))
                         }
                     }
@@ -711,6 +739,30 @@ fun CreateEventModal(
                 }
             }
         }
+    }
+
+    if (showDeleteConfirm) {
+        AlertDialog(
+            onDismissRequest = { showDeleteConfirm = false },
+            containerColor = SurfaceLow,
+            titleContentColor = MaterialTheme.colorScheme.onSurface,
+            textContentColor = Slate,
+            title = { Text("Seguro que quiere borrar", fontWeight = FontWeight.Bold, fontSize = 20.sp) },
+            text = { Text("¿Desea eliminar '${editingEvent?.title}'?", color = Slate, fontSize = 16.sp) },
+            confirmButton = {
+                TextButton(onClick = {
+                    onDelete()
+                    showDeleteConfirm = false
+                }) {
+                    Text("Sí", color = Color.Red, fontWeight = FontWeight.Bold)
+                }
+            },
+            dismissButton = {
+                TextButton(onClick = { showDeleteConfirm = false }) {
+                    Text("No", color = Primary)
+                }
+            }
+        )
     }
 }
 

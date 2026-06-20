@@ -5,6 +5,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.timedrop.data.local.AppDatabase
 import com.example.timedrop.data.local.User
+import com.example.timedrop.data.SyncRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -19,6 +20,7 @@ data class ProfileUiState(
 
 class ProfileViewModel(application: Application) : AndroidViewModel(application) {
     private val userDao = AppDatabase.getDatabase(application).userDao()
+    private val syncRepository = SyncRepository(AppDatabase.getDatabase(application))
     
     private val _uiState = MutableStateFlow(ProfileUiState())
     val uiState: StateFlow<ProfileUiState> = _uiState.asStateFlow()
@@ -27,7 +29,7 @@ class ProfileViewModel(application: Application) : AndroidViewModel(application)
         if (email.isBlank()) return
         
         viewModelScope.launch {
-            _uiState.compareAndSet(_uiState.value, _uiState.value.copy(isLoading = true, error = null))
+            _uiState.value = _uiState.value.copy(isLoading = true, error = null)
             try {
                 val user = userDao.findUserByEmail(email)
                 _uiState.value = _uiState.value.copy(user = user, isLoading = false)
@@ -44,6 +46,14 @@ class ProfileViewModel(application: Application) : AndroidViewModel(application)
             try {
                 val updatedUser = currentUser.copy(fullName = fullName, alias = alias)
                 userDao.insertUser(updatedUser)
+                
+                // Sync to Firebase
+                syncRepository.updateUserProfile(
+                    fullName = fullName,
+                    alias = alias ?: "",
+                    photoBase64 = updatedUser.photoUri?.let { uri -> imageToBase64(uri) }
+                )
+                
                 _uiState.value = _uiState.value.copy(user = updatedUser, isSaving = false)
             } catch (e: Exception) {
                 _uiState.value = _uiState.value.copy(isSaving = false, error = e.localizedMessage)
@@ -55,16 +65,38 @@ class ProfileViewModel(application: Application) : AndroidViewModel(application)
         val currentUser = _uiState.value.user ?: return
         viewModelScope.launch {
             try {
-                // Save to internal storage to ensure persistence after app restart
                 val internalUri = saveImageToInternalStorage(photoUri)
                 if (internalUri != null) {
                     val updatedUser = currentUser.copy(photoUri = internalUri)
                     userDao.insertUser(updatedUser)
+                    
+                    // Sync to Firebase
+                    syncRepository.updateUserProfile(
+                        fullName = updatedUser.fullName,
+                        alias = updatedUser.alias ?: "",
+                        photoBase64 = imageToBase64(internalUri)
+                    )
+                    
                     _uiState.value = _uiState.value.copy(user = updatedUser)
                 }
             } catch (e: Exception) {
                 _uiState.value = _uiState.value.copy(error = e.localizedMessage)
             }
+        }
+    }
+
+    private fun imageToBase64(path: String): String? {
+        return try {
+            val file = java.io.File(path)
+            if (!file.exists()) return null
+            val bitmap = android.graphics.BitmapFactory.decodeFile(path)
+            val outputStream = java.io.ByteArrayOutputStream()
+            bitmap.compress(android.graphics.Bitmap.CompressFormat.JPEG, 50, outputStream)
+            val byteArray = outputStream.toByteArray()
+            android.util.Base64.encodeToString(byteArray, android.util.Base64.DEFAULT)
+        } catch (e: Exception) {
+            e.printStackTrace()
+            null
         }
     }
 
@@ -75,7 +107,6 @@ class ProfileViewModel(application: Application) : AndroidViewModel(application)
             val inputStream = context.contentResolver.openInputStream(uri) ?: return null
             val file = java.io.File(context.filesDir, "profile_photo_${System.currentTimeMillis()}.jpg")
             
-            // Clean up old photos if needed (optional but good practice)
             context.filesDir.listFiles { f -> f.name.startsWith("profile_photo_") }?.forEach { it.delete() }
             
             val outputStream = java.io.FileOutputStream(file)

@@ -14,6 +14,9 @@ interface CalendarEventDao {
     @Query("SELECT * FROM calendar_events WHERE date LIKE :monthPrefix || '%'")
     fun getEventsForMonth(monthPrefix: String): Flow<List<CalendarEvent>>
 
+    @Query("SELECT * FROM calendar_events WHERE id = :id")
+    suspend fun getEventById(id: Int): CalendarEvent?
+
     @Query("SELECT * FROM calendar_events WHERE isTask = 1 AND isCompleted = 0 ORDER BY date ASC, time ASC")
     fun getUncompletedTasks(): Flow<List<CalendarEvent>>
 

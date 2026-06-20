@@ -14,5 +14,6 @@ sealed class TimeDropDestination(val route: String) {
     data object NoteEditor : TimeDropDestination("note_editor/{noteId}") {
         fun createRoute(noteId: Int) = "note_editor/$noteId"
     }
+    data object Monitoring : TimeDropDestination("monitoring")
 }
 
