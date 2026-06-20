@@ -14,3 +14,7 @@
 .cxx
 local.properties
 *.jks
+
+# IDE and Firebase configuration
+.idea/
+app/google-services.json
