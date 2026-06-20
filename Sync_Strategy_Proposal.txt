@@ -1,0 +1,20 @@
+// Contenido del archivo Sync_Strategy_Proposal.txt:
+
+1. RECOMENDACIÓN: FIREBASE CLOUD FIRESTORE
+Para una aplicación como TimeDrop, Firebase es la opción ideal por tres razones:
+- Sincronización en tiempo real: Si marcas una tarea en el Teléfono A, se marca sola en el Teléfono B en milisegundos.
+- Gratis: Tiene un plan gratuito muy generoso que te alcanzará para miles de tareas.
+- Fácil integración con Android: Al ser de Google, las librerías son muy estables.
+
+2. ¿CÓMO FUNCIONARÍA LA CUENTA?
+- Usaríamos el Email del usuario como "ID maestro".
+- En lugar de guardar en la memoria del teléfono, crearíamos una colección llamada "users" -> "tu_correo" -> "events".
+
+3. PROCESO DE MIGRACIÓN:
+- Paso 1: Configurar el proyecto en la consola de Firebase.
+- Paso 2: Cambiar el "Repository" de la app para que en lugar de leer de la base de datos local (Room), lea de Firestore.
+- Paso 3: Implementar un sistema de "caché" para que la app funcione sin internet y se sincronice cuando recuperes señal.
+
+4. VENTAJAS:
+- No pierdes tus rachas ni tareas si borras la app o cambias de teléfono.
+- Puedes tener la app abierta en una Tablet y un Celular al mismo tiempo.
